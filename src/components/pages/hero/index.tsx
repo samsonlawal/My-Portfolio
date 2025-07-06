@@ -1,28 +1,28 @@
 import Link from "next/link";
 
-const extras = [
-  {
-    text: "Hi, I'm Samson",
-    icon: "",
-    bgColor: "bg-[#EDA600]/10",
-    textColor: "text-[#6D4D20]",
-    borderColor: "border-[#6D4D20]",
-  },
-  {
-    text: "FullStack Developer",
-    icon: "",
-    bgColor: "bg-[#D8EEC6]/33",
-    textColor: "text-[#28410E]",
-    borderColor: "border-[#28410E]",
-  },
-  {
-    text: "UI/UX Designer",
-    icon: "",
-    bgColor: "bg-[#141697]/33",
-    textColor: "text-[#08093C]",
-    borderColor: "border-[#08093C]",
-  },
-];
+// const extras = [
+//   {
+//     text: "Hi, I'm Samson",
+//     icon: "",
+//     bgColor: "bg-[#EDA600]/10",
+//     textColor: "text-[#6D4D20]",
+//     borderColor: "border-[#6D4D20]",
+//   },
+//   {
+//     text: "FullStack Developer",
+//     icon: "",
+//     bgColor: "bg-[#D8EEC6]/33",
+//     textColor: "text-[#28410E]",
+//     borderColor: "border-[#28410E]",
+//   },
+//   {
+//     text: "UI/UX Designer",
+//     icon: "",
+//     bgColor: "bg-[#141697]/33",
+//     textColor: "text-[#08093C]",
+//     borderColor: "border-[#08093C]",
+//   },
+// ];
 
 export default function Hero() {
   return (
