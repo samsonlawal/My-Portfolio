@@ -59,7 +59,7 @@ export default function Navbar() {
         href="/Samson_Lawal_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex dark:hidden flex-row gap-2 justify-center items-center bg-[#181C14] hover:bg-[#181C14]/80 transition-colors duration-300 p-[29px] py-[12px] w-fit rounded-full"
+        className="flex dark:hidden flex-row gap-2 justify-center items-center bg-[#181C14] hover:bg-[#181C14]/80 transition-colors duration-300 p-[29px] py-[12px] w-fit rounded-full text"
       >
         <svg
           width="14"
