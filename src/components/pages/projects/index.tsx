@@ -33,7 +33,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="flex flex-col w-full items-start font-dm-sans py-14 h-[750px] bg-[#F0EFED] text-black gap-20">
+    <div className="flex flex-col w-full items-start font-dm-sans py-14 h-[750px] text-black gap-20">
       <h3 className="font-black text-[#181C14] text-[50px] leading-14 tracking-tight">
         Projects
       </h3>
@@ -43,12 +43,12 @@ export default function Projects() {
       >
         <div className="flex flex-col gap-10">
           {projects.map((project, index) => (
-            <div className="flex flex-row gap-[45px] text-[14px] ">
+            <div className="flex flex-row gap-[45px] text-[14px] " key={index}>
               <p className="font-medium w-[70px] text-[#181C14]/70">
                 {project.year}
               </p>
               <div className="flex flex-col gap-2">
-                <div className="flex flex-col gap-1 w-[400px]">
+                <div className="flex flex-col w-[400px]">
                   <h4 className="text-[#181C14] font-semibold">
                     {project.name}
                   </h4>

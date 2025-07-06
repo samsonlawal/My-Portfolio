@@ -1,29 +1,44 @@
-// components/SmoothScroll.tsx
+// components/SmoothScrollWrapper.tsx
 "use client";
-import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
 
-export default function SmoothScroll() {
+import { useEffect, useRef } from "react";
+
+interface SmoothScrollWrapperProps {
+  children: React.ReactNode;
+}
+
+export default function SmoothScrollWrapper({
+  children,
+}: SmoothScrollWrapperProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const lenis = new Lenis({
-      //   duration: 0.5, // duration of momentum (higher = slower stop)
-      //   easing: (t) => 1 - Math.pow(1 - t, 2), // easeOutQuad
-      //   smooth: true,
-      duration: 1.2, // tweak for longer glide (1.0–1.5 works well)
-      easing: (t) => 1 - Math.pow(1 - t, 3), // easeOutCubic
-    });
+    let scroll: any = null;
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    if (scrollRef.current) {
+      import("locomotive-scroll").then((LocomotiveScrollModule) => {
+        const LocomotiveScroll = LocomotiveScrollModule.default;
+        scroll = new LocomotiveScroll({
+          el: scrollRef.current!,
+          smooth: true,
+          multiplier: 1,
+          class: "is-revealed",
+        });
+      });
     }
 
-    requestAnimationFrame(raf);
-
     return () => {
-      lenis.destroy();
+      if (scroll) scroll.destroy();
     };
   }, []);
 
-  return null;
+  return (
+    <div
+      ref={scrollRef}
+      data-scroll-container
+      className="max-screen-wrapper flex flex-col items-center font-dm-sans min-h-screen bg-[#F0EFED] text-black"
+    >
+      {children}
+    </div>
+  );
 }

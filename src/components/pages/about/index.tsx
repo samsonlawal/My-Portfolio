@@ -71,8 +71,11 @@ export default function About() {
     ];
 
     return (
-      <div className="flex flex-row w-full items-center font-dm-sans h-[650px] bg-[#F0EFED] text-black justify-between">
-        <div className="h-fit flex flex-row w-full items-center bg-[#F0EFED] text-black justify-between gap-8">
+      <div
+        className="flex flex-row w-full items-center font-dm-sans h-[650px] text-black justify-between"
+        id="about"
+      >
+        <div className="h-fit flex flex-row w-full items-center text-black justify-between gap-8">
           <div className="rounded-[40px] border-1 border-[#2B3223]/10 w-[650px] h-[380px] px-[38px] justify-center py-10 items-start gap-4 flex flex-col">
             <h3 className="font-semibold text-[32px] tracking-tight text-[#181C14]">
               About Me

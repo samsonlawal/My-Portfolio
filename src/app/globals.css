@@ -22,6 +22,8 @@
   @apply w-full max-w-[1336px] mx-auto;
 }
 
+@custom-variant dark (&:is(.dark *));
+
 /* * {
   margin: 0;
   padding: 0;

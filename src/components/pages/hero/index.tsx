@@ -1,3 +1,4 @@
+import ThemeSwitcher from "@/providers/ThemeSwitcher";
 import Link from "next/link";
 
 // const extras = [
@@ -42,13 +43,18 @@ export default function Hero() {
       </div> */}
       <div className="flex gap-4 flex-col">
         <div className="w-[600px]">
-          <p className="text-[17px] text-[#5D605B] font-medium leading-[22px]">
-            I write <span className="text-[#181c14]">innovative code</span> and
-            develop fast, responsive user interfaces for websites and intuitive
-            mobile apps. My expertise lies in crafting{" "}
-            <span className="text-[#181c14]">comprehensive solutions</span>{" "}
+          <p className="text-[17px] text-[#5D605B] dark:text-[#ECDFCC]/40 font-medium leading-[22px]">
+            I write{" "}
+            <span className="text-[#181c14] dark:text-[#ECDFCC]/70">
+              innovative code
+            </span>{" "}
+            and develop fast, responsive user interfaces for websites and
+            intuitive mobile apps. My expertise lies in crafting{" "}
+            <span className="text-[#181c14] dark:text-[#ECDFCC]/70">
+              comprehensive solutions
+            </span>{" "}
             through{" "}
-            <span className="text-[#181c14]">
+            <span className="text-[#181c14] dark:text-[#ECDFCC]/70">
               performance-driven development.
             </span>
           </p>
@@ -57,18 +63,20 @@ export default function Hero() {
           <div className="flex flex-row gap-4">
             <Link
               href="#contact"
-              className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 bg-[#181C14] transition-colors duration-300 p-[29px] py-[12px] w-fit rounded-full"
+              className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 bg-[#181C14] dark:bg-[#ECDFCC] hover:dark:bg-[#ECDFCC]/80 transition-colors duration-300 p-[29px] py-[12px] w-fit rounded-full"
             >
-              <p className="text-[15px] text-white font-medium">Get in touch</p>
+              <p className="text-[15px] dark:text-[#181c14] text-white font-medium">
+                Get in touch
+              </p>
             </Link>
             <Link
               href="#work"
-              className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 border-[1.5px] border-[#181C14] transition-colors duration-300 px-[24px] py-[8px] w-fit rounded-full text-[#181C14]"
+              className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 border-[1.5px] border-[#181C14] dark:border-[#ECDFCC] dark:text-[#ECDFCC] dark:hover:text-[#181C14] dark:hover:bg-[#ECDFCC] transition-colors duration-300 px-[24px] py-[8px] w-fit rounded-full text-[#181C14]"
             >
               <p className="text-[15px] font-medium">View my work</p>
             </Link>
           </div>
-          <button>
+          {/* <button>
             <svg
               width="28"
               height="28"
@@ -90,7 +98,8 @@ export default function Hero() {
                 fill-opacity="0.8"
               />
             </svg>
-          </button>
+          </button> */}
+          <ThemeSwitcher />
         </div>
       </div>
     </div>

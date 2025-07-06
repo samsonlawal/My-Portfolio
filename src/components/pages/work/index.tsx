@@ -1,7 +1,7 @@
 export default function Works() {
   return (
     <div
-      className="flex flex-col w-full items-start font-dm-sans py-10 h-[800px] bg-[#F0EFED] gap-16"
+      className="flex flex-col w-full items-start font-dm-sans py-10 h-[800px] gap-16"
       id="work"
     >
       <h3 className="font-black text-[#181C14] text-[50px] leading-14 tracking-tight">
