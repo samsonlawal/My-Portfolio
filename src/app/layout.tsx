@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import SmoothScroll from "@/providers/smoothScroll";
+// import SmoothScroll from "@/providers/smoothScroll";
 import { AppThemeProvider } from "@/providers/theme-provider";
 
 export const metadata: Metadata = {
