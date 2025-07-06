@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="h-[80px] w-full justify-between flex flex-row items-center">
+    <div className="h-[90px] w-full justify-between flex flex-row items-center">
       <div className="mr-4 flex flex-row gap-5">
         <Link href="/" className="text-2xl font-bold ml-4">
           <svg
@@ -19,20 +19,22 @@ export default function Navbar() {
           </svg>
         </Link>
         <div className="border-[#A3A4A1] border-r-[2px] " />
-        <div className="flex flex-row items-center gap-4 text-[#464943]">
-          <Link href="/" className="text-[15px] hover:text-[#A3A4A1]">
+        <div className="flex flex-row items-center gap-8 text-[#464943]">
+          <Link href="#about" className="text-[15px] hover:text-[#A3A4A1]">
             About
           </Link>
-          <Link href="/" className="text-[15px] hover:text-[#A3A4A1]">
-            Portfolio
+          <Link href="#work" className="text-[15px] hover:text-[#A3A4A1]">
+            Work
           </Link>
-          <Link href="/" className="text-[15px] hover:text-[#A3A4A1]">
+          <Link href="#contact" className="text-[15px] hover:text-[#A3A4A1]">
             Contact
           </Link>
         </div>
       </div>
-      <Link
-        href=""
+      <a
+        href="/Samson_Lawal_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
         className="flex flex-row gap-2 justify-center items-center bg-white hover:bg-[#ECDFCC] transition-colors duration-300 p-[29px] py-[12px] w-fit rounded-full"
       >
         <svg
@@ -57,7 +59,7 @@ export default function Navbar() {
           />
         </svg>
         <p className="text-[14px]">Resume</p>
-      </Link>
+      </a>
     </div>
   );
 }

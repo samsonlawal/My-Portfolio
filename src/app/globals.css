@@ -31,6 +31,12 @@
 
 body {
   font-family: 'DM Sans', sans-serif;
+  /* scroll-behavior: smooth; */
+  /* scroll-snap-type: proximity; */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 

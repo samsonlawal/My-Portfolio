@@ -56,13 +56,13 @@ export default function Hero() {
         <div className="flex flex-row gap-4 w-full justify-between items-end">
           <div className="flex flex-row gap-4">
             <Link
-              href=""
+              href="#contact"
               className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 bg-[#181C14] transition-colors duration-300 p-[29px] py-[12px] w-fit rounded-full"
             >
               <p className="text-[15px] text-white font-medium">Get in touch</p>
             </Link>
             <Link
-              href=""
+              href="#work"
               className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 border-[1.5px] border-[#181C14] transition-colors duration-300 px-[24px] py-[8px] w-fit rounded-full text-[#181C14]"
             >
               <p className="text-[15px] font-medium">View my work</p>
