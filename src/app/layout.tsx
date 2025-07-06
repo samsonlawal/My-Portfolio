@@ -1,22 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
-// import "./font-dm-sans.css";
-// import localFont from "next/font/local";
-
-// const dmSans = localFont({
-//   src: "/fonts/DM-Sans/DMSans-Regular.ttf",
-//   display: "swap",
-//   variable: "--font-dmsans",
-// });
-
-// const waiter = localFont({
-//   src: "/fonts/WaitingfortheSunrise-Regular.ttf",
-//   display: "swap",
-//   variable: "--font-main",
-// });
 
 export const metadata: Metadata = {
-  title: "Samson lawal | Portfolio",
+  title: "Samson Lawal | Portfolio",
   description:
     "Welcome to my portfolio website! Explore my projects, skills, and experiences. Let's connect and create something amazing together!",
 };
@@ -28,7 +15,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YME5XHC5XG"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YME5XHC5XG');
+          `}
+        </Script>
+      </head>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
