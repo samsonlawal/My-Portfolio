@@ -23,9 +23,7 @@ export default function Navbar() {
 
           <Link
             href="/"
-            className={`text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1.5 rounded-full ${
-              params.get("section") === "" ? "dark:bg-[red] bg-oxford" : ""
-            }`}
+            className={`text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1.5 rounded-full `}
           >
             <img src="/icons/house-out-white.svg" alt="" className="w-[13px]" />
             Home
@@ -33,11 +31,7 @@ export default function Navbar() {
 
           <Link
             href="#about"
-            className={`text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1.5 rounded-full ${
-              params.get("section") === "#about"
-                ? "dark:bg-[red] bg-oxford"
-                : ""
-            }`}
+            className={`text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1.5 rounded-full`}
           >
             <img src="/icons/user-out-white.svg" alt="" className="w-[18px]" />
             About
