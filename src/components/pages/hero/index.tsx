@@ -1,4 +1,5 @@
 import ThemeSwitcher from "@/providers/ThemeSwitcher";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 
 // const extras = [
@@ -26,8 +27,10 @@ import Link from "next/link";
 // ];
 
 export default function Hero() {
+  const { setTheme, resolvedTheme } = useTheme();
+
   return (
-    <div className="w-full mb-26 flex flex-col gap-5">
+    <div className="w-full md:mb-14 flex flex-col gap-5">
       {/* <div>
         <div className="flex flex-row gap-4 items-center">
           {extras.map((extra, index) => (
@@ -41,65 +44,113 @@ export default function Hero() {
           ))}
         </div>
       </div> */}
-      <div className="flex gap-4 flex-col">
-        <div className="w-[600px]">
-          <p className="text-[17px] text-[#5D605B] dark:text-[#ECDFCC]/40 font-medium leading-[22px]">
-            I write{" "}
-            <span className="text-[#181c14] dark:text-[#ECDFCC]/70">
-              innovative code
-            </span>{" "}
-            and develop fast, responsive user interfaces for websites and
-            intuitive mobile apps. My expertise lies in crafting{" "}
-            <span className="text-[#181c14] dark:text-[#ECDFCC]/70">
-              comprehensive solutions
-            </span>{" "}
-            through{" "}
-            <span className="text-[#181c14] dark:text-[#ECDFCC]/70">
-              performance-driven development.
-            </span>
-          </p>
-        </div>
-        <div className="flex flex-row gap-4 w-full justify-between items-end">
-          <div className="flex flex-row gap-4">
-            <Link
-              href="#contact"
-              className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 bg-[#181C14] dark:bg-[#ECDFCC] hover:dark:bg-[#ECDFCC]/80 transition-colors duration-300 p-[29px] py-[12px] w-fit rounded-full"
-            >
-              <p className="text-[15px] dark:text-[#181c14] text-white font-medium">
-                Get in touch
+      <div className="flex gap-4 md:gap-10 flex-col w-full items-center justify-center">
+        <div className="lg:w-[800px] h-fit flex flex-row gap-3">
+          {/* <img
+            src="/icons/icon.jpg"
+            alt="avatar"
+            className="rounded-xl"
+            style={{
+              width: "300px",
+              height: "300px",
+              objectFit: "cover",
+              objectPosition: "center bottom",
+            }}
+          /> */}
+          <div className="h-full flex flex-col justify-between">
+            <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border dark:border-[#90aecf]/30 border-oxford/20 text-[14px] rounded-full justify-start text-oxford dark:text-[#fff] flex dark:bg-[#000] bg-oxford/8">
+              <p>Software Engineer</p>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h1 className="text-[26px] md:text-[48px] text-oxford dark:text-white font-semibold leading-[34px] md:leading-[50px]">
+                {/* Turning ideas into websites and apps that feel effortless to use. */}
+                Samson Deji Lawal.
+              </h1>
+              <p className="text-[15px] md:text-[16px] md:pr-20 text-[#5D605B] dark:text-[#9d9d9d] font-normal leading-[18px] md:leading-[22px]">
+                I'm a Frontend Developer. <br /> I design and develop digital
+                products that are fast, reliable, & easy to use. My work focuses
+                on creating clean, responsive interfaces that deliver a smooth
+                experience on any device.
               </p>
-            </Link>
-            <Link
+            </div>
+            <div className="flex flex-row gap-4 w-full justify-between items-end">
+              <div className="flex flex-row gap-4">
+                <Link
+                  href="/Samson_Lawal_Resume.pdf"
+                  download
+                  className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 bg-oxford hover:bg-oxford/90 dark:bg-sapphire hover:dark:bg-powder/80 transition-colors duration-300 px-[26px] py-[8px] w-fit rounded-full"
+                >
+                  <p className="text-[15px] dark:text-white text-white font-medium">
+                    Resume
+                  </p>
+                  <img src="/icons/resumes.svg" alt="" className="" />
+                </Link>
+                <div className="flex flex-row gap-2">
+                  <a
+                    href="https://github.com/samsonlawal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="flex flex-row gap-1 cursor-pointer w-10 h-10 justify-center items-center border border-oxford/30 dark:border-sapphire/30 rounded-full hover:bg-oxford/20 dark:hover:bg-sapphire/20 transition-colors duration-300">
+                      <img
+                        src={`/icons/${
+                          resolvedTheme === "dark"
+                            ? "githubb-lighter"
+                            : "githubb-dark"
+                        }.svg`}
+                        alt=""
+                        className="w-[16px]"
+                      />
+                      {/* <p>github</p> */}
+                    </span>
+                  </a>
+
+                  <a
+                    href="https://x.com/samsondejs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="flex flex-row gap-1 cursor-pointer w-10 h-10 justify-center items-center border border-oxford/30 dark:border-sapphire/30 rounded-full hover:bg-oxford/20 dark:hover:bg-sapphire/20 transition-colors duration-300">
+                      <img
+                        src={`/icons/${
+                          resolvedTheme === "dark"
+                            ? "twitter-lighter"
+                            : "twitterr-dark"
+                        }.svg`}
+                        alt=""
+                        className="w-[16px]"
+                      />
+                      {/* <p>twitter</p> */}
+                    </span>
+                  </a>
+
+                  <a href="https://" target="_blank" rel="noopener noreferrer">
+                    <span className="flex flex-row gap-1 cursor-pointer w-10 h-10 justify-center items-center border border-oxford/30 dark:border-sapphire/30 rounded-full hover:bg-oxford/20 dark:hover:bg-sapphire/20 transition-colors duration-300">
+                      <img
+                        src={`/icons/${
+                          resolvedTheme === "dark"
+                            ? "linkedin-lighter"
+                            : "linkedinn-dark"
+                        }.svg`}
+                        alt=""
+                        className="w-[14px]"
+                      />
+                      {/* <p>linkedin</p> */}
+                    </span>
+                  </a>
+                </div>
+                {/* <Link
               href="#work"
               className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 border-[1.5px] border-[#181C14] dark:border-[#ECDFCC] dark:text-[#ECDFCC] dark:hover:text-[#181C14] dark:hover:bg-[#ECDFCC] transition-colors duration-300 px-[24px] py-[8px] w-fit rounded-full text-[#181C14]"
             >
               <p className="text-[15px] font-medium">View my work</p>
-            </Link>
+            </Link> */}
+              </div>
+              {/* <div className="hidden md:flex">
+            <ThemeSwitcher />
+          </div>{" "} */}
+            </div>
           </div>
-          {/* <button>
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="hover:rotate-180 transition-all duration-3000"
-            >
-              <path
-                d="M24 33C21.6139 32.9974 19.3262 32.0483 17.639 30.361C15.9517 28.6738 15.0026 26.3861 15 24C15 19.038 19.038 15 24 15C28.962 15 33 19.038 33 24C33 28.962 28.962 33 24 33Z"
-                fill="#181C14"
-                fill-opacity="0.8"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M24 6C24.2652 6 24.5196 6.10536 24.7071 6.29289C24.8946 6.48043 25 6.73478 25 7V11C25 11.2652 24.8946 11.5196 24.7071 11.7071C24.5196 11.8946 24.2652 12 24 12C23.7348 12 23.4804 11.8946 23.2929 11.7071C23.1054 11.5196 23 11.2652 23 11V7C23 6.73478 23.1054 6.48043 23.2929 6.29289C23.4804 6.10536 23.7348 6 24 6ZM36 24C36 23.7348 36.1054 23.4804 36.2929 23.2929C36.4804 23.1054 36.7348 23 37 23H41C41.2652 23 41.5196 23.1054 41.7071 23.2929C41.8946 23.4804 42 23.7348 42 24C42 24.2652 41.8946 24.5196 41.7071 24.7071C41.5196 24.8946 41.2652 25 41 25H37C36.7348 25 36.4804 24.8946 36.2929 24.7071C36.1054 24.5196 36 24.2652 36 24ZM6 24C6 23.7348 6.10536 23.4804 6.29289 23.2929C6.48043 23.1054 6.73478 23 7 23H11C11.2652 23 11.5196 23.1054 11.7071 23.2929C11.8946 23.4804 12 23.7348 12 24C12 24.2652 11.8946 24.5196 11.7071 24.7071C11.5196 24.8946 11.2652 25 11 25H7C6.73478 25 6.48043 24.8946 6.29289 24.7071C6.10536 24.5196 6 24.2652 6 24ZM24 36C24.2652 36 24.5196 36.1054 24.7071 36.2929C24.8946 36.4804 25 36.7348 25 37V41C25 41.2652 24.8946 41.5196 24.7071 41.7071C24.5196 41.8946 24.2652 42 24 42C23.7348 42 23.4804 41.8946 23.2929 41.7071C23.1054 41.5196 23 41.2652 23 41V37C23 36.7348 23.1054 36.4804 23.2929 36.2929C23.4804 36.1054 23.7348 36 24 36ZM36.708 11.292C36.8011 11.3849 36.875 11.4952 36.9254 11.6167C36.9758 11.7382 37.0018 11.8685 37.0018 12C37.0018 12.1315 36.9758 12.2618 36.9254 12.3833C36.875 12.5048 36.8011 12.6151 36.708 12.708L33.708 15.708C33.5202 15.8958 33.2656 16.0013 33 16.0013C32.7344 16.0013 32.4798 15.8958 32.292 15.708C32.1042 15.5202 31.9987 15.2656 31.9987 15C31.9987 14.7344 32.1042 14.4798 32.292 14.292L35.292 11.292C35.3849 11.1989 35.4952 11.125 35.6167 11.0746C35.7382 11.0242 35.8685 10.9982 36 10.9982C36.1315 10.9982 36.2618 11.0242 36.3833 11.0746C36.5048 11.125 36.6151 11.1989 36.708 11.292ZM15.708 32.292C15.8011 32.3849 15.875 32.4952 15.9254 32.6167C15.9758 32.7382 16.0018 32.8685 16.0018 33C16.0018 33.1315 15.9758 33.2618 15.9254 33.3833C15.875 33.5048 15.8011 33.6151 15.708 33.708L12.708 36.708C12.5202 36.8958 12.2656 37.0013 12 37.0013C11.7344 37.0013 11.4798 36.8958 11.292 36.708C11.1042 36.5202 10.9987 36.2656 10.9987 36C10.9987 35.7344 11.1042 35.4798 11.292 35.292L14.292 32.292C14.3849 32.1989 14.4952 32.125 14.6167 32.0746C14.7382 32.0242 14.8685 31.9982 15 31.9982C15.1315 31.9982 15.2618 32.0242 15.3833 32.0746C15.5048 32.125 15.6151 32.1989 15.708 32.292ZM11.292 11.292C11.3849 11.1989 11.4952 11.125 11.6167 11.0746C11.7382 11.0242 11.8685 10.9982 12 10.9982C12.1315 10.9982 12.2618 11.0242 12.3833 11.0746C12.5048 11.125 12.6151 11.1989 12.708 11.292L15.708 14.292C15.8958 14.4798 16.0013 14.7344 16.0013 15C16.0013 15.2656 15.8958 15.5202 15.708 15.708C15.5202 15.8958 15.2656 16.0013 15 16.0013C14.7344 16.0013 14.4798 15.8958 14.292 15.708L11.292 12.708C11.1989 12.6151 11.125 12.5048 11.0746 12.3833C11.0242 12.2618 10.9982 12.1315 10.9982 12C10.9982 11.8685 11.0242 11.7382 11.0746 11.6167C11.125 11.4952 11.1989 11.3849 11.292 11.292ZM32.292 32.292C32.3849 32.1989 32.4952 32.125 32.6167 32.0746C32.7382 32.0242 32.8685 31.9982 33 31.9982C33.1315 31.9982 33.2618 32.0242 33.3833 32.0746C33.5048 32.125 33.6151 32.1989 33.708 32.292L36.708 35.292C36.801 35.385 36.8747 35.4954 36.925 35.6168C36.9754 35.7383 37.0013 35.8685 37.0013 36C37.0013 36.1315 36.9754 36.2617 36.925 36.3832C36.8747 36.5046 36.801 36.615 36.708 36.708C36.615 36.801 36.5046 36.8747 36.3832 36.925C36.2617 36.9754 36.1315 37.0013 36 37.0013C35.8685 37.0013 35.7383 36.9754 35.6168 36.925C35.4954 36.8747 35.385 36.801 35.292 36.708L32.292 33.708C32.1989 33.6151 32.125 33.5048 32.0746 33.3833C32.0242 33.2618 31.9982 33.1315 31.9982 33C31.9982 32.8685 32.0242 32.7382 32.0746 32.6167C32.125 32.4952 32.1989 32.3849 32.292 32.292Z"
-                fill="#181C14"
-                fill-opacity="0.8"
-              />
-            </svg>
-          </button> */}
-          <ThemeSwitcher />
         </div>
       </div>
     </div>

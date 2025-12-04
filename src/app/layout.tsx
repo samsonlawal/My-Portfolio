@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "Samson Lawal | Portfolio",
   description:
     "Welcome to my portfolio website! Explore my projects, skills, and experiences. Let's connect and create something amazing together!",
+  icons: {
+    // Reference your image file in the public directory
+    icon: "/icon.jpg",
+  },
 };
 
 export default function RootLayout({

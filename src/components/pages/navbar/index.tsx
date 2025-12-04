@@ -1,95 +1,119 @@
+import ThemeSwitcher from "@/providers/ThemeSwitcher";
+import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { resolve } from "path";
 
 export default function Navbar() {
-  return (
-    <div className="h-[90px] w-full justify-between flex flex-row items-center">
-      <div className="mr-4 flex flex-row gap-5">
-        <Link href="/" className="text-2xl font-bold ml-4 dark:hidden">
-          <svg
-            width="26"
-            height="26"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M37.7997 2.20031C36.3315 0.732104 34.565 -0.00133292 32.5001 1.81844e-06H7.49988C5.43371 1.81844e-06 3.66719 0.733439 2.20031 2.20031C0.732104 3.66852 -0.00133292 5.43504 1.81844e-06 7.49988V32.5001C1.81844e-06 34.5663 0.733439 36.3328 2.20031 37.7997C3.66852 39.2679 5.43504 40.0013 7.49988 40H13.334C13.7144 40 14.0007 39.9866 14.1929 39.96C14.4168 39.9157 14.6188 39.7963 14.7655 39.6216C14.9564 39.4214 15.0518 39.1311 15.0518 38.7507L15.0378 36.9788C15.0298 35.8496 15.0258 34.9554 15.0258 34.296L14.4251 34.4001C14.0447 34.4695 13.5636 34.5002 12.9816 34.4922C12.3744 34.4806 11.7691 34.4197 11.1717 34.31C10.5353 34.1946 9.93623 33.9267 9.4259 33.5292C8.89023 33.1241 8.49075 32.5654 8.2807 31.9275L8.02042 31.3269C7.80021 30.8535 7.52466 30.408 7.19956 29.9995C6.82584 29.5137 6.44811 29.184 6.06637 29.0105L5.88618 28.8803C5.76106 28.7897 5.64685 28.6849 5.54582 28.568C5.44933 28.4594 5.3703 28.3365 5.31158 28.2036C5.25952 28.0808 5.3029 27.9807 5.44172 27.9033C5.58053 27.8232 5.83279 27.7838 6.19851 27.7852L6.71906 27.8653C7.06609 27.9333 7.49521 28.1409 8.00641 28.4879C8.52307 28.8402 8.95466 29.3032 9.26974 29.8433C9.67016 30.5534 10.152 31.096 10.7153 31.471C11.2798 31.8448 11.8484 32.0316 12.421 32.0316C12.9936 32.0316 13.4888 31.9883 13.9066 31.9015C14.3112 31.8176 14.7044 31.6859 15.0778 31.5091C15.234 30.3465 15.6591 29.4523 16.3532 28.8263C15.4531 28.7373 14.561 28.5807 13.6844 28.3578C12.829 28.1231 12.0064 27.7821 11.2358 27.3427C10.4294 26.9037 9.71721 26.3105 9.1396 25.5969C8.58435 24.9028 8.12854 23.9919 7.77216 22.864C7.41712 21.7348 7.2396 20.4321 7.2396 18.9559C7.2396 16.8564 7.92499 15.0678 9.29576 13.5903C8.65509 12.0113 8.71582 10.2414 9.47795 8.2807C9.98248 8.1232 10.7293 8.23999 11.7183 8.63106C12.7073 9.02214 13.4321 9.35582 13.8926 9.63211C14.3531 9.91241 14.7221 10.1473 14.9998 10.3369C16.6272 9.88307 18.3094 9.65536 19.999 9.66014C21.7181 9.66014 23.3852 9.88571 25.0003 10.3369L25.9893 9.7122C26.7501 9.25546 27.5525 8.872 28.3858 8.567C29.3054 8.21996 30.0088 8.12453 30.496 8.2807C31.2768 10.2428 31.3456 12.0133 30.7022 13.5923C32.0743 15.0672 32.7604 16.8557 32.7604 18.9579C32.7604 20.4341 32.5822 21.7402 32.2258 22.876C31.8708 24.0132 31.411 24.9248 30.8464 25.6109C30.2569 26.3137 29.5421 26.9009 28.7382 27.3427C27.8973 27.8112 27.0811 28.1496 26.2896 28.3578C25.4131 28.5814 24.521 28.7386 23.6208 28.8283C24.5217 29.6091 24.9729 30.841 24.9742 32.5241V38.7507C24.9742 39.0443 25.0176 39.2826 25.1044 39.4654C25.1449 39.5532 25.2026 39.6319 25.2741 39.6969C25.3457 39.762 25.4296 39.8119 25.5208 39.8438C25.7117 39.9132 25.8812 39.9559 26.0293 39.972C26.1775 39.9907 26.3897 39.9993 26.666 39.998H32.5001C34.5663 39.998 36.3328 39.2646 37.7997 37.7977C39.2666 36.3308 40 34.5643 40 32.4981V7.49988C40 5.43371 39.2679 3.66719 37.7997 2.20031Z"
-              fill="#181C14"
-            />
-          </svg>
-        </Link>
+  const { setTheme, resolvedTheme } = useTheme();
+  const params = useSearchParams();
 
-        <Link href="/" className="hidden text-2xl font-bold ml-4 dark:flex">
-          <svg
-            width="26"
-            height="26"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+  return (
+    <div className="h-fit w-full justify-between md:flex flex-row items-center hidden py-4">
+      <div className="mr-4 flex flex-row gap-5 items-center justify-center w-full">
+        <div className="h-[42px] flex-row items-center gap-1 border dark:border-[#000]/100 border-oxford/20 px-1 rounded-full justify-start text-oxford dark:text-[#fff] py-0 flex dark:bg-[#000]/20 bg-oxford/8">
+          {/* <Link
+            href="#"
+            className="text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b] px-2.5 py-2.5 rounded-full"
           >
-            <path
-              d="M37.7997 2.20031C36.3315 0.732104 34.565 -0.00133292 32.5001 1.81844e-06H7.49988C5.43371 1.81844e-06 3.66719 0.733439 2.20031 2.20031C0.732104 3.66852 -0.00133292 5.43504 1.81844e-06 7.49988V32.5001C1.81844e-06 34.5663 0.733439 36.3328 2.20031 37.7997C3.66852 39.2679 5.43504 40.0013 7.49988 40H13.334C13.7144 40 14.0007 39.9866 14.1929 39.96C14.4168 39.9157 14.6188 39.7964 14.7655 39.6216C14.9564 39.4214 15.0518 39.1311 15.0518 38.7507L15.0378 36.9788C15.0298 35.8496 15.0258 34.9554 15.0258 34.296L14.4251 34.4001C14.0447 34.4695 13.5636 34.5002 12.9816 34.4922C12.3744 34.4806 11.7691 34.4197 11.1717 34.31C10.5353 34.1946 9.93623 33.9267 9.4259 33.5292C8.89023 33.1241 8.49075 32.5654 8.2807 31.9275L8.02042 31.3269C7.80021 30.8536 7.52466 30.408 7.19956 29.9995C6.82584 29.5137 6.44811 29.184 6.06637 29.0105L5.88618 28.8803C5.76106 28.7897 5.64685 28.6849 5.54583 28.568C5.44933 28.4594 5.3703 28.3365 5.31158 28.2036C5.25952 28.0808 5.3029 27.9807 5.44172 27.9033C5.58053 27.8232 5.83279 27.7838 6.19851 27.7852L6.71906 27.8653C7.06609 27.9333 7.49521 28.1409 8.00641 28.4879C8.52307 28.8402 8.95466 29.3032 9.26974 29.8433C9.67016 30.5534 10.152 31.096 10.7153 31.471C11.2798 31.8448 11.8484 32.0316 12.421 32.0316C12.9936 32.0316 13.4888 31.9883 13.9066 31.9015C14.3112 31.8176 14.7044 31.6859 15.0778 31.5091C15.234 30.3465 15.6591 29.4523 16.3532 28.8263C15.4531 28.7373 14.561 28.5807 13.6844 28.3578C12.829 28.1231 12.0064 27.7821 11.2358 27.3427C10.4294 26.9037 9.71721 26.3105 9.1396 25.5969C8.58435 24.9028 8.12854 23.9919 7.77216 22.864C7.41712 21.7348 7.2396 20.4321 7.2396 18.9559C7.2396 16.8564 7.92499 15.0678 9.29576 13.5903C8.65509 12.0113 8.71582 10.2414 9.47795 8.2807C9.98248 8.1232 10.7293 8.23999 11.7183 8.63106C12.7073 9.02214 13.4321 9.35582 13.8926 9.63211C14.3531 9.91241 14.7221 10.1473 14.9998 10.3369C16.6272 9.88307 18.3094 9.65536 19.999 9.66014C21.7181 9.66014 23.3852 9.88571 25.0003 10.3369L25.9893 9.7122C26.7501 9.25546 27.5525 8.872 28.3858 8.567C29.3054 8.21997 30.0088 8.12453 30.496 8.2807C31.2768 10.2428 31.3456 12.0133 30.7022 13.5923C32.0743 15.0672 32.7604 16.8557 32.7604 18.9579C32.7604 20.4341 32.5822 21.7402 32.2258 22.876C31.8708 24.0132 31.411 24.9248 30.8464 25.6109C30.2569 26.3137 29.5421 26.9009 28.7382 27.3427C27.8973 27.8112 27.0811 28.1496 26.2896 28.3578C25.4131 28.5814 24.521 28.7387 23.6208 28.8283C24.5217 29.6091 24.9729 30.8411 24.9742 32.5242V38.7507C24.9742 39.0443 25.0176 39.2826 25.1044 39.4654C25.1449 39.5532 25.2026 39.6319 25.2741 39.697C25.3457 39.762 25.4296 39.8119 25.5208 39.8438C25.7117 39.9132 25.8812 39.956 26.0293 39.972C26.1775 39.9907 26.3897 39.9993 26.666 39.998H32.5001C34.5663 39.998 36.3328 39.2646 37.7997 37.7977C39.2666 36.3308 40 34.5643 40 32.4981V7.49988C40 5.43371 39.2679 3.66719 37.7997 2.20031Z"
-              fill="white"
-            />
-          </svg>
-        </Link>
-        <div className="border-[#A3A4A1] border-r-[2px] " />
-        <div className="flex flex-row items-center gap-8 text-[#464943]">
+            <img src="/icons/house-out-white.svg" alt="" className="w-[14px]" />
+          </Link>
+
+          <div className=" border-r-[1px] h-[22px] border-white" /> */}
+
+          <Link
+            href="/"
+            className={`text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1.5 rounded-full ${
+              params.get("section") === "" ? "dark:bg-[red] bg-oxford" : ""
+            }`}
+          >
+            <img src="/icons/house-out-white.svg" alt="" className="w-[13px]" />
+            Home
+          </Link>
+
           <Link
             href="#about"
-            className="text-[15px] hover:text-[#A3A4A1] dark:text-[#ECDFCC]/70 dark:hover:text-[#ECDFCC]/80"
+            className={`text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1.5 rounded-full ${
+              params.get("section") === "#about"
+                ? "dark:bg-[red] bg-oxford"
+                : ""
+            }`}
           >
+            <img src="/icons/user-out-white.svg" alt="" className="w-[18px]" />
             About
           </Link>
           <Link
             href="#work"
-            className="text-[15px] hover:text-[#A3A4A1] dark:text-[#ECDFCC]/70 dark:hover:text-[#ECDFCC]/80"
+            className="text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1.5 rounded-full"
           >
+            <img
+              src="/icons/brief-out-white.svg"
+              alt="work"
+              className="w-[18px]"
+            />
             Work
+          </Link>
+
+          <Link
+            href="#projects"
+            className="text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1.5 rounded-full"
+          >
+            <img src="/icons/lego-out-white.svg" alt="" className="w-[18px]" />
+            Projects
           </Link>
           <Link
             href="#contact"
-            className="text-[15px] hover:text-[#A3A4A1] dark:text-[#ECDFCC]/70 dark:hover:text-[#ECDFCC]/80"
+            className="text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1.5 rounded-full"
           >
+            <img src="/icons/phone-out-white.svg" alt="" className="w-[14px]" />
             Contact
           </Link>
-        </div>
-      </div>
-      <a
-        href="/Samson_Lawal_Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex dark:hidden flex-row gap-2 justify-center items-center bg-[#181C14] hover:bg-[#181C14]/80 transition-colors duration-300 p-[29px] py-[12px] w-fit rounded-full text"
-      >
-        <svg
-          width="14"
-          height="18"
-          viewBox="0 0 19 22"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M6.5 12H12.5M6.5 16H9.5M1.5 3V19C1.5 19.5304 1.71071 20.0391 2.08579 20.4142C2.46086 20.7893 2.96957 21 3.5 21H15.5C16.0304 21 16.5391 20.7893 16.9142 20.4142C17.2893 20.0391 17.5 19.5304 17.5 19V7.342C17.5 7.07556 17.4467 6.81181 17.3433 6.56624C17.2399 6.32068 17.0885 6.09824 16.898 5.912L12.458 1.57C12.0844 1.20466 11.5826 1.00007 11.06 1H3.5C2.96957 1 2.46086 1.21071 2.08579 1.58579C1.71071 1.96086 1.5 2.46957 1.5 3Z"
-            stroke="#181C14"
-            strokeWidth="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M11.5 1V5C11.5 5.53043 11.7107 6.03914 12.0858 6.41421C12.4609 6.78929 12.9696 7 13.5 7H17.5"
-            stroke="#181C14"
-            strokeWidth="1.5"
-            stroke-linejoin="round"
-          />
-        </svg>
-        <p className="text-[14px]">Resume</p>
-      </a>
 
-      <a
+          <div className="border-l-[1px] dark:border-[#90aecf]/20 pl-4 pr-2 flex">
+            <ThemeSwitcher />
+          </div>
+          {/* <Link
+            href="#contact"
+            className="text-[14px] hover:text-oxford/80  dark:hover:text-[#90aecf]/80"
+          >
+            Resume
+          </Link> */}
+        </div>
+      </div>{" "}
+      {/* <a
         href="/Samson_Lawal_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="dark:flex flex-row gap-2 justify-center items-center bg-[#ECDFCC] hidden hover:bg-[#ECDFCC] transition-colors duration-300 p-[29px] py-[12px] w-fit rounded-full"
+        className="flex flex-row gap-2 justify-center items-center dark:hover:bg-[#ECDFCC]/70 dark:bg-[#ECDFCC] bg-oxford hover:bg-oxford/80 transition-colors duration-300 px-[29px] py-[8px] w-fit rounded-full text-[white] dark:text-oxford font-medium"
+      >
+        <svg
+          width="14"
+          height="18"
+          viewBox="0 0 19 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.5 12H12.5M6.5 16H9.5M1.5 3V19C1.5 19.5304 1.71071 20.0391 2.08579 20.4142C2.46086 20.7893 2.96957 21 3.5 21H15.5C16.0304 21 16.5391 20.7893 16.9142 20.4142C17.2893 20.0391 17.5 19.5304 17.5 19V7.342C17.5 7.07556 17.4467 6.81181 17.3433 6.56624C17.2399 6.32068 17.0885 6.09824 16.898 5.912L12.458 1.57C12.0844 1.20466 11.5826 1.00007 11.06 1H3.5C2.96957 1 2.46086 1.21071 2.08579 1.58579C1.71071 1.96086 1.5 2.46957 1.5 3Z"
+            stroke={resolvedTheme === "light" ? "#ECDFCC" : "#181C14"}
+            strokeWidth="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11.5 1V5C11.5 5.53043 11.7107 6.03914 12.0858 6.41421C12.4609 6.78929 12.9696 7 13.5 7H17.5"
+            stroke={resolvedTheme === "light" ? "#ECDFCC" : "#181C14"}
+            strokeWidth="1.5"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <p className="text-[14px]">Resume</p>
+      </a> */}
+      {/* <a
+        href="/Samson_Lawal_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="dark:flex flex-row gap-2 justify-center items-center bg-[#ECDFCC] hidden hover:bg-[#ECDFCC] transition-colors duration-300 p-[29px] py-[10px] w-fit rounded-full"
       >
         <svg
           width="14"
@@ -113,7 +137,7 @@ export default function Navbar() {
           />
         </svg>
         <p className="text-[14px]">Resume</p>
-      </a>
+      </a> */}
     </div>
   );
 }

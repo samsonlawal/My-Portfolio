@@ -41,5 +41,22 @@ html {
   scroll-behavior: smooth;
 }
 
+.plane {
+  cursor: url('/icons/planetry.svg')3 3, auto;
+}
+
+.glass {
+  cursor: url('/icons/glass.svg')3 3, auto;
+  z-index: 100;
+}
+
+@theme {
+  --color-oxford: #010A13;
+  --color-france: #2A88F4;
+   --color-sapphire: #0956AE;
+  --color-powder: #90AECF;
+}
+
+
 
 

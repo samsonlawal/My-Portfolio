@@ -26,14 +26,14 @@ function ThemeSwitcher() {
     <>
       <button
         // className="cursor-not-allowed"
-        className="cursor-pointer hidden lg:flex"
+        className="cursor-pointer flex"
         onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       >
         {resolvedTheme === "light" ? (
           <img
             src="/icons/sun-dark.svg"
             alt="sun dark"
-            className=" w-[28px] h-[28px] hover:rotate-180 transition-all duration-3000"
+            className=" w-[16px] h-[16px] hover:rotate-180 transition-all duration-3000"
           />
         ) : null}
         {resolvedTheme === "dark" ? (
@@ -41,7 +41,7 @@ function ThemeSwitcher() {
           <img
             src="/icons/sun-light.svg"
             alt="sun light"
-            className=" w-[28px] h-[28px] hover:rotate-180 transition-all duration-3000"
+            className=" w-[16x] h-[16px] hover:rotate-180 transition-all duration-3000"
           />
         ) : null}
       </button>

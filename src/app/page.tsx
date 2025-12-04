@@ -8,12 +8,11 @@ import About from "@/components/pages/about";
 import Works from "@/components/pages/work";
 import Projects from "@/components/pages/projects";
 import Contact from "@/components/pages/contact";
+import Footer from "@/components/pages/footer";
 import { AppThemeProvider } from "@/providers/theme-provider";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll"; // In _app.js or layout.js
 import "locomotive-scroll/dist/locomotive-scroll.css";
-
-
 
 export default function Home() {
   // const scrollRef = useRef<HTMLDivElement>(null);
@@ -36,17 +35,18 @@ export default function Home() {
 
   return (
     <div
-      className="max-screen-wrapper flex flex-col items-center font-dm-sans min-h-screen bg-[#ECDFCC] dark:bg-[#181C14] text-black "
+      className=" flex flex-col items-center font-dm-sans min-h-screen bg-[#fff] dark:bg-oxford text-black "
       // ref={scrollRef}
       // data-scroll-container
     >
-      <div className="max-screen-inner">
-        <Main />
-        <About />
-        <Works />
-        <Projects />
-        <Contact />
-      </div>
+      {/* <div className="max-screen-inner"> */}
+      <Main />
+      <About />
+      <Works />
+      <Projects />
+      <Contact />
+      <Footer />
+      {/* </div> */}
     </div>
   );
 }
