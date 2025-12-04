@@ -77,11 +77,11 @@ export default function About() {
   ];
 
   useGSAP(() => {
-    const splitTypes = document.querySelectorAll(".reveal-type");
+    const splitTypes = document.querySelectorAll<HTMLElement>(".reveal-type");
 
     splitTypes.forEach((char, i) => {
-      const bg = char?.dataset?.bgColor;
-      const fg = char?.dataset?.fgColor;
+      const bg = char?.dataset?.bgColor ?? "#000";
+      const fg = char?.dataset?.fgColor ?? "#fff";
 
       const text = new SplitType(char, { types: "chars" });
 

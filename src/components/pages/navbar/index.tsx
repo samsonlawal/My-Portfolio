@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <div className="h-fit w-full justify-between md:flex flex-row items-center hidden py-4">
       <div className="mr-4 flex flex-row gap-5 items-center justify-center w-full">
-        <div className="h-[42px] flex-row items-center gap-1 border dark:border-[#000]/100 border-oxford/20 px-1 rounded-full justify-start text-oxford dark:text-[#fff] py-0 flex dark:bg-[#000]/20 bg-oxford/8">
+        <div className="h-[42px] flex-row items-center gap-1 border dark:border-[#000]/100 border-oxford/20 px-1 rounded-full justify-start text-oxford dark:text-[#fff] py-0 flex dark:bg-[#000]/50 bg-oxford/8">
           {/* <Link
             href="#"
             className="text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b] px-2.5 py-2.5 rounded-full"
