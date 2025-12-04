@@ -1,12 +1,11 @@
 import ThemeSwitcher from "@/providers/ThemeSwitcher";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { resolve } from "path";
 
 export default function Navbar() {
   const { setTheme, resolvedTheme } = useTheme();
-  const params = useSearchParams();
+
 
   return (
     <div className="h-fit w-full justify-between md:flex flex-row items-center hidden py-4">
