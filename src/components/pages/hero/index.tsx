@@ -45,8 +45,8 @@ export default function Hero() {
         </div>
       </div> */}
       <div className="flex gap-4 md:gap-10 flex-col w-full items-center justify-center">
-        <div className="lg:w-[800px] h-fit flex flex-row gap-3">
-          {/* <img
+        <div className="h-fit flex flex-row gap-10">
+          <img
             src="/icons/icon.jpg"
             alt="avatar"
             className="rounded-xl"
@@ -56,26 +56,27 @@ export default function Hero() {
               objectFit: "cover",
               objectPosition: "center bottom",
             }}
-          /> */}
-          <div className="h-full flex flex-col justify-between">
-            <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border dark:border-[#90aecf]/30 border-oxford/20 text-[14px] rounded-full justify-start text-oxford dark:text-[#fff] flex dark:bg-[#000] bg-oxford/8">
+          />
+          <div className="h-full flex flex-col justify-center gap-4">
+            <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border dark:border-sapphire/70 border-oxford/20 text-[14px] font-medium rounded-full justify-start text-oxford dark:text-[rgb(255,255,255)] flex dark:bg-sapphire/30 bg-oxford/8">
               <p>Software Engineer</p>
+              {/* <div className="w-[1.4px] h-[16px] bg-oxford/20 dark:bg-sapphire/70" />
+              <p>Frontend Developer</p> */}
             </div>
-            <div className="flex flex-col gap-2">
-              <h1 className="text-[26px] md:text-[48px] text-oxford dark:text-white font-semibold leading-[34px] md:leading-[50px]">
+            <div className="flex flex-col gap-2 w-[600px]">
+              <h1 className="text-[26px] md:text-[48px] text-oxford dark:text-white font-normal leading-[34px] md:leading-[50px]">
                 {/* Turning ideas into websites and apps that feel effortless to use. */}
-                Samson Deji Lawal.
+                Samson Deji Lawal
               </h1>
-              <p className="text-[15px] md:text-[16px] md:pr-20 text-[#5D605B] dark:text-[#9d9d9d] font-normal leading-[18px] md:leading-[22px]">
-                I'm a Frontend Developer. <br /> I design and develop digital
-                products that are fast, reliable, & easy to use. My work focuses
-                on creating clean, responsive interfaces that deliver a smooth
-                experience on any device.
+              <p className="text-[15px] md:text-[16px] md:pr-20 text-[#c] dark:text-[#9d9d9d] font-normal leading-[18px] md:leading-[22px]">
+                I build digital products that are fast, reliable, & easy to use.
+                My work focuses on creating clean, responsive interfaces that
+                deliver a smooth experience on any device.
               </p>
             </div>
             <div className="flex flex-row gap-4 w-full justify-between items-end">
               <div className="flex flex-row gap-4">
-                <Link
+                {/* <Link
                   href="/Samson_Lawal_Resume.pdf"
                   download
                   className="flex flex-row gap-2 justify-center items-center hover:bg-bg-464943 bg-oxford hover:bg-oxford/90 dark:bg-sapphire hover:dark:bg-powder/80 transition-colors duration-300 px-[26px] py-[8px] w-fit rounded-full"
@@ -84,14 +85,14 @@ export default function Hero() {
                     Resume
                   </p>
                   <img src="/icons/resumes.svg" alt="" className="" />
-                </Link>
+                </Link> */}
                 <div className="flex flex-row gap-2">
                   <a
                     href="https://github.com/samsonlawal"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="flex flex-row gap-1 cursor-pointer w-10 h-10 justify-center items-center border border-oxford/30 dark:border-sapphire/30 rounded-full hover:bg-oxford/20 dark:hover:bg-sapphire/20 transition-colors duration-300">
+                    <span className="flex flex-row gap-1 cursor-pointer w-fit px-4 py-1.5 justify-center items-center border border-oxford/30 dark:border-white/10 rounded-full hover:bg-oxford/20 dark:hover:bg-white/6 transition-colors duration-300">
                       <img
                         src={`/icons/${
                           resolvedTheme === "dark"
@@ -101,7 +102,9 @@ export default function Hero() {
                         alt=""
                         className="w-[16px]"
                       />
-                      {/* <p>github</p> */}
+                      <p className="text-[14px] dark:text-[#fff] text-white">
+                        Github
+                      </p>
                     </span>
                   </a>
 
@@ -110,7 +113,7 @@ export default function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="flex flex-row gap-1 cursor-pointer w-10 h-10 justify-center items-center border border-oxford/30 dark:border-sapphire/30 rounded-full hover:bg-oxford/20 dark:hover:bg-sapphire/20 transition-colors duration-300">
+                    <span className="flex flex-row gap-1 cursor-pointer w-fit px-4 py-1.5 justify-center items-center border border-oxford/30 dark:border-white/10 rounded-full hover:bg-oxford/20 dark:hover:bg-white/6 transition-colors duration-300">
                       <img
                         src={`/icons/${
                           resolvedTheme === "dark"
@@ -120,12 +123,14 @@ export default function Hero() {
                         alt=""
                         className="w-[16px]"
                       />
-                      {/* <p>twitter</p> */}
+                      <p className="text-[14px] dark:text-[#fff] text-white">
+                        Twitter
+                      </p>
                     </span>
                   </a>
 
                   <a href="https://" target="_blank" rel="noopener noreferrer">
-                    <span className="flex flex-row gap-1 cursor-pointer w-10 h-10 justify-center items-center border border-oxford/30 dark:border-sapphire/30 rounded-full hover:bg-oxford/20 dark:hover:bg-sapphire/20 transition-colors duration-300">
+                    <span className="flex flex-row gap-1 cursor-pointer w-fit px-4 py-1.5 justify-center items-center border border-oxford/30 dark:border-white/10 rounded-full hover:bg-oxford/20 dark:hover:bg-white/6 transition-colors duration-300">
                       <img
                         src={`/icons/${
                           resolvedTheme === "dark"
@@ -135,7 +140,9 @@ export default function Hero() {
                         alt=""
                         className="w-[14px]"
                       />
-                      {/* <p>linkedin</p> */}
+                      <p className="text-[14px] dark:text-[#fff] text-white">
+                        Linkedin
+                      </p>
                     </span>
                   </a>
                 </div>

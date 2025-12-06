@@ -5,7 +5,7 @@ export default function Footer() {
     <div className="max-screen-wrapper">
       <div className="max-screen-inner flex flex-row w-full items-center font-dm-sans h-fit text-gray-500 justify-between py-3">
         <p className="flex flex-row gap-1 text-sm font-medium text-gray-500">
-          © 2025 - <span>Samson Deji Lawal</span>
+          © 2025 - Samson Deji Lawal
         </p>
         <div className="flex flex-row gap-2">
           {/* <Link
