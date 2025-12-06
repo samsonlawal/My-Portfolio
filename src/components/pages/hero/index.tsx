@@ -30,7 +30,7 @@ export default function Hero() {
   const { setTheme, resolvedTheme } = useTheme();
 
   return (
-    <div className="w-full md:mb-14 flex flex-col gap-5">
+    <div className="w-full md:mb-14 flex flex-col gap-5 h-[100vh] justify-center items-center">
       {/* <div>
         <div className="flex flex-row gap-4 items-center">
           {extras.map((extra, index) => (
