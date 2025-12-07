@@ -1,34 +1,52 @@
+import ProjectGallery from "@/components/reusables/gallery";
+
 export default function Projects() {
   const projects = [
     {
-      year: "Ongoing",
+      // year: "Ongoing",
       name: "Task Stack",
       description:
         "A task/workspace managing system with members, roles, comments, attachments.",
       stack: "Next • Tailwind • Typescript • Express • MongoDB",
+      images: [
+        "/icons/card-view.svg",
+        "/icons/list-view.svg",
+      ],
     },
 
     {
-      year: "2025",
+      // year: "2025",
       name: "Knote Taker",
       description:
         "A simple app to capture, organize, and format notes with markdown support, providing a fast, and secure note-taking",
       stack: "Next • Typescript •  Supabase • Tailwind • MDX",
+      images: [
+        "/icons/card-view.svg",
+        "/icons/list-view.svg",
+      ],
     },
 
     {
-      year: "2024",
+      // year: "2024",
       name: "CoinIn",
       description:
         "Crypto app that shows the current market price of crypto assets, top gainer and losers, portfolio to keep track of potential assets.",
       stack: "React • Supabase",
+      images: [
+        "/icons/card-view.svg",
+        "/icons/list-view.svg",
+      ],
     },
 
     {
-      year: "2023",
+      // year: "2023",
       name: "Movie Release",
       description: "A website for information on movies and TV shows.",
       stack: "React",
+      images: [
+        "/icons/card-view.svg",
+        "/icons/list-view.svg",
+      ],
     },
   ];
 
@@ -44,12 +62,14 @@ export default function Projects() {
         >
           <div className="hidden md:flex flex-row flex-wrap justify-between gap-10">
             {projects.map((project, index) => (
+              <div className="flex flex-col gap-3 md:gap-[20px]" key={index}>
+
               <div className="flex flex-row gap-3 md:gap-[45px]" key={index}>
-                <div className="w-[60px] md:w-[70px] text-[12px] md:text-[14px] ">
+                {/* <div className="w-[60px] md:w-[70px] text-[12px] md:text-[14px] ">
                   <p className="font-medium text-oxford/70 dark:text-powder/50">
                     {project.year}
                   </p>
-                </div>
+                </div> */}
                 <div className="flex flex-col gap-2 flex-1">
                   <div className="flex flex-col flex-1 md:w-[400px] gap-1">
                     <h4 className="text-oxford dark:text-powder font-medium md:font-semibold text-[14px]">
@@ -63,7 +83,11 @@ export default function Projects() {
                     {project.stack}
                   </p>
                 </div>
+
               </div>
+              <ProjectGallery images={project.images} />
+              </div>
+
             ))}
           </div>
 

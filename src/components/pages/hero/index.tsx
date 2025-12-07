@@ -45,7 +45,7 @@ export default function Hero() {
         </div>
       </div> */}
       <div className="flex gap-4 md:gap-10 flex-col w-full items-center justify-center">
-        <div className="h-fit flex flex-row gap-10">
+        <div className="h-fit flex md:flex-row flex-col gap-10">
           <img
             src="/icons/icon.jpg"
             alt="avatar"
@@ -58,12 +58,14 @@ export default function Hero() {
             }}
           />
           <div className="h-full flex flex-col justify-center gap-4">
-            <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border dark:border-sapphire/70 border-oxford/20 text-[14px] font-medium rounded-full justify-start text-oxford dark:text-[rgb(255,255,255)] flex dark:bg-sapphire/30 bg-oxford/8">
-              <p>Software Engineer</p>
+            <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border border-oxford/20 text-[14px] font-medium rounded-full justify-start text-oxford dark:text-[rgb(255,255,255)] flex bg-oxford/8">
+              <p className="text-[14px] dark:text-sapphire text-white">
+                Software Engineer
+              </p>
               {/* <div className="w-[1.4px] h-[16px] bg-oxford/20 dark:bg-sapphire/70" />
               <p>Frontend Developer</p> */}
             </div>
-            <div className="flex flex-col gap-2 w-[600px]">
+            <div className="flex flex-col gap-2 lg:w-[600px]">
               <h1 className="text-[26px] md:text-[48px] text-oxford dark:text-white font-normal leading-[34px] md:leading-[50px]">
                 {/* Turning ideas into websites and apps that feel effortless to use. */}
                 Samson Deji Lawal
