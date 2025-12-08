@@ -30,7 +30,7 @@ export default function Hero() {
   const { setTheme, resolvedTheme } = useTheme();
 
   return (
-    <div className="w-full md:mb-14 flex flex-col gap-5 h-[100vh] justify-center items-center">
+    <div className="w-full md:mb-14 flex flex-col gap-5 h-fit md:h-[100vh] justify-center items-center">
       {/* <div>
         <div className="flex flex-row gap-4 items-center">
           {extras.map((extra, index) => (
@@ -45,39 +45,59 @@ export default function Hero() {
         </div>
       </div> */}
       <div className="flex gap-4 md:gap-10 flex-col w-full items-center justify-center">
-        <div className="h-fit flex md:flex-row flex-col gap-10">
+        <div className="h-fit justify-center items-center  md:justify-start flex md:flex-row flex-col gap-6 md:gap-10">
+          {/* <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border border-oxford/20 text-[14px] font-medium rounded-full justify-center md:justify-start text-oxford dark:text-[rgb(255,255,255)] flex dark:bg-[white] bg-[#262626]">
+            <p className="text-[10px] font-medium dark:text-[#262626] text-[#fff]">
+              Software Engineer
+            </p>
+          </div> */}
+                      <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border border-oxford/20 text-[14px] font-medium rounded-full justify-center md:justify-start text-oxford dark:text-[rgb(255,255,255)] flex dark:bg-[green]/20 md:hidden">
+
+              <div className="w-[8px] rounded-full h-[8px] bg-[#0db70d] animate-pulse shadow-lg shadow-[#0db70d]/50 " />
+              <p className="text-[14px] text-[#0db70d] font-normal">
+                Available for work
+              </p>
+            </div>
+
+            {/* Image */}
           <img
             src="/icons/icon.jpg"
             alt="avatar"
-            className="rounded-xl"
+            className="rounded-xl w-[300px] h-[300px]"
             style={{
-              width: "300px",
-              height: "300px",
               objectFit: "cover",
               objectPosition: "center bottom",
             }}
           />
-          <div className="h-full flex flex-col justify-center gap-4">
-            <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border border-oxford/20 text-[14px] font-medium rounded-full justify-start text-oxford dark:text-[rgb(255,255,255)] flex bg-oxford/8">
-              <p className="text-[14px] dark:text-sapphire text-white">
+          <div className="h-full flex flex-col gap-4 justify-center items-center  md:justify-center md:items-start">
+
+            {/* Availability badge */}
+            <div className="h-fit py-1.5 w-fit px-4 md:flex-row items-center gap-2 border border-oxford/20 text-[14px] font-medium rounded-full justify-center md:justify-start text-oxford dark:text-[rgb(255,255,255)] hidden md:flex dark:bg-[green]/20  ">
+              {/* <p className="text-[14px] dark:text-sapphire text-white">
                 Software Engineer
+              </p> */}
+              <div className="w-[8px] rounded-full h-[8px] bg-[#0db70d] animate-pulse shadow-lg shadow-[#0db70d]/50 " />
+              <p className="text-[14px] text-[#0db70d] font-normal">
+                Available for work
               </p>
-              {/* <div className="w-[1.4px] h-[16px] bg-oxford/20 dark:bg-sapphire/70" />
-              <p>Frontend Developer</p> */}
             </div>
-            <div className="flex flex-col gap-2 lg:w-[600px]">
+
+            {/* Text */}
+            <div className="flex flex-col gap-2 lg:w-[600px] justify-center items-center md:justify-between md:items-start">
               <h1 className="text-[26px] md:text-[48px] text-oxford dark:text-white font-normal leading-[34px] md:leading-[50px]">
-                {/* Turning ideas into websites and apps that feel effortless to use. */}
                 Samson Deji Lawal
               </h1>
-              <p className="text-[15px] md:text-[16px] md:pr-20 text-[#c] dark:text-[#9d9d9d] font-normal leading-[18px] md:leading-[22px]">
+              {/* <p className="text-[15px] md:text-[16px] md:pr-20 text-[#c] dark:text-[#9d9d9d] text-center md:text-left font-normal leading-[18px] md:leading-[22px]">
                 I build digital products that are fast, reliable, & easy to use.
                 My work focuses on creating clean, responsive interfaces that
                 deliver a smooth experience on any device.
+              </p> */}
+               <p className="text-[15px] md:text-[20px] md:pr-20 text-[#c] dark:text-[#9d9d9d] text-center md:text-left font-normal leading-[18px] md:leading-[22px]">
+                Software Engineer
               </p>
             </div>
-            <div className="flex flex-row gap-4 w-full justify-between items-end">
-              <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-4 w-full justify-center items-center  md:justify-between md:items-start">
+              <div className="flex flex-row gap-2">
                 {/* <Link
                   href="/Samson_Lawal_Resume.pdf"
                   download
