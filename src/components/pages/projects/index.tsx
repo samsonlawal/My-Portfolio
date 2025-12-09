@@ -107,7 +107,7 @@ export default function Projects() {
                       </h4>
 
                       <p className="font-medium text-oxford/70 dark:text-powder">
-                        {project.year}
+                        {/* {project.year} */}
                       </p>
                     </div>
                     <p className="leading-4.5 dark:text-[#9d9d9d] text-[#5D605B] text-[14px]">
