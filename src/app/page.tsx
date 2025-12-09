@@ -49,7 +49,7 @@ export default function Home() {
           property="og:description"
           content="I’m a software engineer with a knack for problem-solving and a strong CS background. I build clean, scalable web applications and elegant solutions."
         />
-        <meta property="og:image" content="https://samsonlawal.vercel.app/avatar.jpg" />
+        <meta property="og:image" content="https://samsonlawal.vercel.app/icons/icon.jpg" />
         <meta property="og:url" content="https://samsonlawal.vercel.app" />
         <meta property="og:type" content="website" />
       </Head>
