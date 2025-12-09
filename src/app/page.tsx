@@ -13,6 +13,7 @@ import { AppThemeProvider } from "@/providers/theme-provider";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll"; // In _app.js or layout.js
 import "locomotive-scroll/dist/locomotive-scroll.css";
+import Head from "next/head";
 
 export default function Home() {
   // const scrollRef = useRef<HTMLDivElement>(null);
@@ -34,6 +35,24 @@ export default function Home() {
   // }, []);
 
   return (
+<>
+    <Head>
+        <title>Samson Lawal — Software Engineer</title>
+        <meta
+          name="description"
+          content="I’m a software engineer with a knack for problem-solving and a strong CS background. I build clean, scalable web applications and elegant solutions."
+        />
+        
+        {/* Open Graph metadata for link previews */}
+        <meta property="og:title" content="Samson Lawal — Software Engineer" />
+        <meta
+          property="og:description"
+          content="I’m a software engineer with a knack for problem-solving and a strong CS background. I build clean, scalable web applications and elegant solutions."
+        />
+        <meta property="og:image" content="https://yourportfolio.com/og-image.png" />
+        <meta property="og:url" content="https://yourportfolio.com" />
+        <meta property="og:type" content="website" />
+      </Head>
     <div
       className=" flex flex-col items-center font-dm-sans min-h-screen bg-[#fff] dark:bg-oxford text-black "
       // ref={scrollRef}
@@ -47,6 +66,6 @@ export default function Home() {
       <Contact />
       <Footer />
       {/* </div> */}
-    </div>
+    </div></>
   );
 }

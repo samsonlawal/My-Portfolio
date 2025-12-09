@@ -51,12 +51,19 @@ export default function Hero() {
               Software Engineer
             </p>
           </div> */}
-                      <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border border-oxford/20 text-[14px] font-medium rounded-full justify-center md:justify-start text-oxford dark:text-[rgb(255,255,255)] flex dark:bg-[green]/20 md:hidden">
+                      {/* <div className="h-fit py-1.5 w-fit px-4 flex-row items-center gap-2 border border-oxford/20 text-[14px] font-medium rounded-full justify-center md:justify-start text-oxford dark:text-[rgb(255,255,255)] flex dark:bg-[green]/20 md:hidden">
 
               <div className="w-[8px] rounded-full h-[8px] bg-[#0db70d] animate-pulse shadow-lg shadow-[#0db70d]/50 " />
               <p className="text-[14px] text-[#0db70d] font-normal">
                 Available for work
               </p>
+            </div> */}
+
+                      <div className="bg-white/60 px-2 py-1.5 rounded-sm flex flex-row items-center gap-1 md:hidden cursor-pointer">
+              <img src="/icons/code-symbol.svg" alt="code-symbol" className="w-[16px] h-[16px]" />
+                            <p className="text-[13px] font-medium dark:text-[#262626] text-white"> 
+                            Software Engineer
+                          </p>
             </div>
 
             {/* Image */}
@@ -71,30 +78,37 @@ export default function Hero() {
           />
           <div className="h-full flex flex-col gap-4 justify-center items-center  md:justify-center md:items-start">
 
+          <div className="bg-white/60 px-2 py-1.5 rounded-sm hidden flex-row items-center gap-1 md:flex cursor-pointer">
+              <img src="/icons/code-symbol.svg" alt="code-symbol" className="w-[16px] h-[16px]" />
+                            <p className="text-[13px] font-medium dark:text-[#262626] text-white"> 
+                            Software Engineer
+                          </p>
+            </div>
+
             {/* Availability badge */}
-            <div className="h-fit py-1.5 w-fit px-4 md:flex-row items-center gap-2 border border-oxford/20 text-[14px] font-medium rounded-full justify-center md:justify-start text-oxford dark:text-[rgb(255,255,255)] hidden md:flex dark:bg-[green]/20  ">
-              {/* <p className="text-[14px] dark:text-sapphire text-white">
-                Software Engineer
-              </p> */}
+            {/* <div className="h-fit py-1.5 w-fit px-4 md:flex-row items-center gap-2 border border-oxford/20 text-[14px] font-medium rounded-full justify-center md:justify-start text-oxford dark:text-[rgb(255,255,255)] hidden md:flex dark:bg-[green]/20  ">
+
               <div className="w-[8px] rounded-full h-[8px] bg-[#0db70d] animate-pulse shadow-lg shadow-[#0db70d]/50 " />
               <p className="text-[14px] text-[#0db70d] font-normal">
                 Available for work
               </p>
             </div>
+            </div> */}
 
             {/* Text */}
-            <div className="flex flex-col gap-2 lg:w-[600px] justify-center items-center md:justify-between md:items-start">
+            <div className="flex flex-col gap-2 lg:max-w-[600px] justify-center items-center md:justify-between md:items-start">
               <h1 className="text-[26px] md:text-[48px] text-oxford dark:text-white font-normal leading-[34px] md:leading-[50px]">
                 Samson Deji Lawal
               </h1>
-              {/* <p className="text-[15px] md:text-[16px] md:pr-20 text-[#c] dark:text-[#9d9d9d] text-center md:text-left font-normal leading-[18px] md:leading-[22px]">
-                I build digital products that are fast, reliable, & easy to use.
+              <p className="text-[15px] md:text-[16px] md:pr-20 text-[#c] dark:text-[#9d9d9d] text-center md:text-left font-normal leading-[18px] md:leading-[22px]">
+                {/* I build digital products that are fast, reliable, & easy to use.
                 My work focuses on creating clean, responsive interfaces that
-                deliver a smooth experience on any device.
-              </p> */}
-               <p className="text-[15px] md:text-[20px] md:pr-20 text-[#c] dark:text-[#9d9d9d] text-center md:text-left font-normal leading-[18px] md:leading-[22px]">
-                Software Engineer
+                deliver a smooth experience on any device. */}
+                I'm an engineer with a knack for problem-solving and a strong background in computer science. I enjoy building scalable and maintainable web applications/solutions.
               </p>
+              {/* <p className="text-[15px] md:text-[20px] md:pr-20 text-[#c] dark:text-[#9d9d9d] text-center md:text-left font-normal leading-[18px] md:leading-[22px]">
+                Software Engineer
+              </p>   */}
             </div>
             <div className="flex flex-row gap-4 w-full justify-center items-center  md:justify-between md:items-start">
               <div className="flex flex-row gap-2">
