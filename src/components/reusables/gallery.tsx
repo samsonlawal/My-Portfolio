@@ -17,7 +17,7 @@ export default function ProjectGallery({ images }: Props) {
       {/* Thumbnail / first image */}
       <img
         src={images[0]}
-        className="cursor-pointer w-16 h-10 object-cover rounded-lg border"
+        className="cursor-pointer w-auto h-[220px] object-cover rounded-lg border"
         onClick={() => setOpen(true)}
       />
 

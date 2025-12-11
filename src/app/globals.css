@@ -1,8 +1,6 @@
 @import "./font-dm-sans.css";
 @import "tailwindcss";
 
-
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -15,7 +13,7 @@
 }
 
 .max-screen-wrapper {
-  @apply w-full px-[20px] lg:px-[90px] ;
+  @apply w-full px-[20px] lg:px-[90px];
 }
 
 .max-screen-inner {
@@ -23,6 +21,25 @@
 }
 
 @custom-variant dark (&:is(.dark *));
+
+.loader {
+  width: 60px;
+  aspect-ratio: 1.154;
+  --c: #0000, #ccc 2deg 59deg, #0000 61deg;
+  --c1: conic-gradient(from 149deg at top, var(--c));
+  --c2: conic-gradient(from -31deg at bottom, var(--c));
+  background: var(--c1) top, var(--c1) bottom right, var(--c2) bottom,
+    var(--c1) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  animation: l37 1s infinite;
+}
+@keyframes l37 {
+  80%,
+  100% {
+    background-position: bottom right, bottom left, bottom, top;
+  }
+}
 
 /* * {
   margin: 0;
@@ -32,7 +49,7 @@
 } */
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   /* scroll-behavior: smooth; */
   /* scroll-snap-type: proximity; */
 }
@@ -42,21 +59,17 @@ html {
 }
 
 .plane {
-  cursor: url('/icons/planetry.svg')3 3, auto;
+  cursor: url("/icons/planetry.svg") 3 3, auto;
 }
 
 .glass {
-  cursor: url('/icons/glass.svg')3 3, auto;
+  cursor: url("/icons/glass.svg") 3 3, auto;
   z-index: 100;
 }
 
 @theme {
-  --color-oxford: #010A13;
-  --color-france: #2A88F4;
-   --color-sapphire: #0956AE;
-  --color-powder: #90AECF;
+  --color-oxford: #010a13;
+  --color-france: #2a88f4;
+  --color-sapphire: #0956ae;
+  --color-powder: #90aecf;
 }
-
-
-
-

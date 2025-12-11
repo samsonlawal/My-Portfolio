@@ -4,6 +4,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
 import { motion } from "framer-motion";
 import { ANIMATE_PROPS } from "@/helpers/motion";
+import { useGsapFadeIn } from "@/hooks/useGsapFadeIn";
+import { useRef } from "react";
 
 export default function About() {
   const Languages = [
@@ -109,8 +111,12 @@ export default function About() {
     return () => {};
   }, {});
 
+  const aboutRef = useRef<HTMLDivElement>(null);
+
+  useGsapFadeIn({ ref: aboutRef, scroll: true });
+
   return (
-    <div className="max-screen-wrapper py-[120px]">
+    <div className="max-screen-wrapper py-[120px]" ref={aboutRef}>
       <div
         className="max-screen-inner flex flex-col gap-10 xl:gap-0 xl:flex-row w-full items-start font-dm-sans  text-black justify-between"
         id="about"

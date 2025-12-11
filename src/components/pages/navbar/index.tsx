@@ -3,66 +3,42 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { resolve } from "path";
 
+import { NAV_ITEMS } from "@/lib/constants";
+
 export default function Navbar() {
   const { setTheme, resolvedTheme } = useTheme();
 
-
   return (
-    <div className="h-fit w-full justify-between md:flex flex-row items-center hidden py-4 fixed top-6 z-50 transition-all duration-300">
+    <div className="h-fit w-full justify-between md:flex flex-row items-center hidden py-5 fixed top-0 z-50 transition-all duration-300 backdrop-blur-[2px]">
       <div className="mr-4 flex flex-row gap-5 items-center justify-center w-full">
-        <div className="h-[42px] flex-row items-center gap-1 border dark:border-[#fff]/10 border-oxford/20 px-1 rounded-full justify-start text-oxford dark:text-[#fff] py-0 flex dark:bg-[#000]/100 bg-oxford/8">
+        <div className="h-[42px] flex-row items-center gap-1 border dark:border-[#fff]/10 border-oxford/20 px-1 rounded-full justify-start text-oxford dark:text-[#fff] py-0 flex dark:bg-[#000]/100 bg-gray-200">
           {/* <Link
             href="#"
             className="text-[14px] hover:bg-oxford/80  dark:hover:bg-[#3b3b3b] px-2.5 py-2.5 rounded-full"
           >
-            <img src="/icons/house-out-white.svg" alt="" className="w-[14px]" />
+            <img src="/icons/house-out-white.svg" alt="" className="w-[14px]" /> 
           </Link>
 
           <div className=" border-r-[1px] h-[22px] border-white" /> */}
 
-          <Link
-            href="/"
-            className={`text-[14px] hover:bg-oxford/80 border-[1px] border-[#000]/50 dark:hover:border-[1px] dark:hover:border-white/10  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1 rounded-full transition-all duration-300`}
-          >
-            <img src="/icons/house-out-white.svg" alt="" className="w-[13px]" />
-            Home
-          </Link>
+          {NAV_ITEMS.map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              className="text-[14px] hover:bg-white/80 border-transparent border-[1px] hover:border-[#000]/10 dark:hover:border-[1px] dark:hover:border-white/10 dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1 rounded-full"
+            >
+              <img
+                src={resolvedTheme === "light" ? item.iconDark : item.icon}
+                alt={item.alt}
+                className={item.width}
+              />
+              {item.name}
+            </Link>
+          ))}
 
-          <Link
-            href="#about"
-            className={`text-[14px] hover:bg-oxford/80 border-[1px] border-[#000]/50 dark:hover:border-white/10  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1 rounded-full transition-all duration-300`}
-          >
-            <img src="/icons/user-out-white.svg" alt="" className="w-[18px]" />
-            About
-          </Link>
-          <Link
-            href="#work"
-            className="text-[14px] hover:bg-oxford/80 border-[1px] border-[#000]/50 dark:hover:border-[1px] dark:hover:border-white/10  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1 rounded-full transition-all duration-300"
-          >
-            <img
-              src="/icons/brief-out-white.svg"
-              alt="work"
-              className="w-[18px]"
-            />
-            Work
-          </Link>
+          <div className=" border-l-[1px] h-[16px] border-oxford/20 dark:border-[#fff]/20 mr-1" />
 
-          <Link
-            href="#projects"
-            className="text-[14px] hover:bg-oxford/80 border-[1px] border-[#000]/50 dark:hover:border-[1px] dark:hover:border-white/10  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1 rounded-full transition-all duration-300"
-          >
-            <img src="/icons/lego-out-white.svg" alt="" className="w-[18px]" />
-            Projects
-          </Link>
-          <Link
-            href="#contact"
-            className="text-[14px] hover:bg-oxford/80 border-[1px] border-[#000]/50 dark:hover:border-[1px] dark:hover:border-white/10  dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1 rounded-full transition-all duration-300"
-          >
-            <img src="/icons/phone-out-white.svg" alt="" className="w-[14px]" />
-            Contact
-          </Link>
-
-          <div className="border-l-[1px] dark:border-[#90aecf]/20 pl-4 pr-2 flex">
+          <div className="px-1.5 rounded-full py-1.5 flex hover:border-[#000]/10 transition-all duration-300 hover:bg-[#fff]/80 dark:hover:bg-[#3b3b3b]/80">
             <ThemeSwitcher />
           </div>
           {/* <Link
