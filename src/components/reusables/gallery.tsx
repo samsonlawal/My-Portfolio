@@ -15,11 +15,18 @@ export default function ProjectGallery({ images }: Props) {
   return (
     <div>
       {/* Thumbnail / first image */}
-      <img
-        src={images[0]}
-        className="cursor-pointer w-auto h-[220px] object-cover rounded-lg border"
-        onClick={() => setOpen(true)}
-      />
+      <div className="flex flex-row gap-2 justify-start items-start">
+        <img
+          src={images[0]}
+          className="cursor-pointer w-auto h-[80px] object-cover rounded-lg border border-gray-200"
+          onClick={() => setOpen(true)}
+        />
+        {/* <img
+          src={images[1]}
+          className="cursor-pointer w-auto h-[80px] object-cover rounded-lg border border-gray-200"
+          onClick={() => setOpen(true)}
+        /> */}
+      </div>
 
       {/* Lightbox */}
       {open && (

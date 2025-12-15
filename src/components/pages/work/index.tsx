@@ -9,6 +9,8 @@ const WORK_EXPERIENCE = [
     techStack: "React • Typescript • Tailwind ",
     image: "/icons/webbie-large.svg",
     alt: "webbie-large",
+    link: "https://webbie.io",
+    year: "2024",
   },
   {
     title: "cvspan",
@@ -17,6 +19,8 @@ const WORK_EXPERIENCE = [
     techStack: "React • Typescript • Tailwind ",
     image: "/icons/cvspan-large.svg",
     alt: "cvspan-large",
+    link: "https://cvspan.com",
+    year: "2024",
   },
 ];
 
@@ -40,13 +44,25 @@ export default function Works() {
             <div
               ref={worksRef}
               key={index}
-              className="flex flex-col border-1  gap-4 items-start justify-center rounded-[10px] w-full md:w-[500px] px-[16px] py-[18px] md:px-[24px] md:py-[24px] border-[#2B3223]/1 dark:border-powder/8 bg-powder/3"
+              className="flex flex-col border-1 h-fit gap-4 items-start justify-center rounded-[10px] w-full md:w-[500px] px-[16px] py-[18px] md:px-[24px] md:py-[24px] border-[#2B3223]/1 dark:border-powder/8 bg-powder/3 transition-all duration-300"
             >
               <div className="flex flex-col gap-1 w-full items-start">
-                <h4 className="text-[24px] text-oxford dark:text-white">
-                  {work.title}
-                </h4>
-                <p className="text-[14px] dark:text-[#9d9d9d] text-[#5D605B] leading-4.5">
+                <a
+                  href={work.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-oxford dark:text-white  hover:text-[#2B3223] dark:hover:text-powder transition-all duration-300"
+                >
+                  <h4 className="text-[24px] flex flex-row gap-1 justify-center items-center">
+                    {work.title}
+                    <img
+                      src="/icons/ext-link.svg"
+                      alt="ext-link"
+                      className="w-[12px] h-[12px]"
+                    />
+                  </h4>
+                </a>
+                <p className="text-[14px] min-h-[100px] dark:text-[#9d9d9d] text-[#5D605B] leading-4.5">
                   {work.description}
                   <br />
                   <br />
