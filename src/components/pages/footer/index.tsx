@@ -49,6 +49,17 @@ export default function Footer() {
             </a>
           </div>
         </div>
+        <div className="flex flex-row gap-2 px-4 py-1 justify-center items-center rounded-full border-[1.5px] border-[#181C14]/20 bg-[#181C14]/20 hover:bg-[#181c14]/40 dark:border-[#90aecf]/20 dark:bg-powder/8 transition-colors duration-300">
+          <img
+            src="/icons/copy-dark.svg"
+            alt=""
+            className="w-[14px] cursor-pointer"
+          />
+
+          <p className="text-[#181C14] dark:text-white/70 text-[16px]">
+            samsondejilawal@gmail.com
+          </p>
+        </div>
         <div className="flex flex-row gap-2 w-fit justify-center items-center md:justify-start ">
           <p className=" text-sm font-medium text-gray-500/70">© 2025</p>
           <div className="text-oxford dark:text-gray-500/30">|</div>
