@@ -10,7 +10,7 @@ const WORK_EXPERIENCE = [
     image: "/icons/webbie-large.svg",
     alt: "webbie-img",
     link: "https://webbie.io",
-    year: "2024",
+    year: "Jun - Feb 2024",
     role: "Frontend Developer",
   },
   {
@@ -21,7 +21,7 @@ const WORK_EXPERIENCE = [
     image: "/icons/cvspan-large.svg",
     alt: "cvspan-img",
     link: "https://cvspan.com",
-    year: "2024",
+    year: "Jun - Feb 2024",
     role: "Frontend Developer",
   },
 ];
