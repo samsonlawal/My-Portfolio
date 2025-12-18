@@ -1,13 +1,41 @@
 import Link from "next/link";
+import { SOCIAL_LINKS } from "@/lib/constants";
+import { useTheme } from "next-themes";
 
 export default function Footer() {
+  const { resolvedTheme } = useTheme();
+
   return (
     <div className="max-screen-wrapper">
       <div className="max-screen-inner flex flex-col gap-6 w-full items-center poppins h-fit text-gray-500 justify-between pb-[120px] pt-[36px] md:py-[40px] md:flex-row-reverse">
         <div className="flex flex-col">
           {/* <p>Follow me:</p> */}
           <div className="flex flex-row gap-4">
-            <a
+            {/* Map */}
+            {SOCIAL_LINKS.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span
+                  className={`flex flex-row gap-1 cursor-pointer w-9 h-9 justify-center items-center bg-[#181C14]/20 rounded-full hover:bg-[#181c14]/40 dark:bg-[#90aecf]/70 dark:hover:bg-[#90aecf] transition-colors duration-300 ${
+                    resolvedTheme === "dark"
+                      ? "dark:bg-[#90aecf]/70 dark:hover:bg-[#90aecf]"
+                      : ""
+                  }`}
+                >
+                  <img
+                    src={`/icons/${link.iconLight}.svg`}
+                    alt=""
+                    className="w-[16px]"
+                  />
+                </span>
+              </a>
+            ))}
+
+            {/* <a
               href="https://github.com/samsonlawal"
               target="_blank"
               rel="noopener noreferrer"
@@ -18,7 +46,6 @@ export default function Footer() {
                   alt=""
                   className="w-[16px]"
                 />
-                {/* <p>github</p> */}
               </span>
             </a>
 
@@ -33,7 +60,6 @@ export default function Footer() {
                   alt=""
                   className="w-[16px]"
                 />
-                {/* <p>twitter</p> */}
               </span>
             </a>
 
@@ -44,9 +70,8 @@ export default function Footer() {
                   alt=""
                   className="w-[14px]"
                 />
-                {/* <p>linkedin</p> */}
               </span>
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="flex flex-row gap-2 px-4 py-1 justify-center items-center rounded-full border-[1.5px] border-[#181C14]/20 bg-[#181C14]/20 hover:bg-[#181c14]/40 dark:border-[#90aecf]/20 dark:bg-powder/8 transition-colors duration-300">
