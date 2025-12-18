@@ -1,6 +1,4 @@
 import ProjectGallery from "@/components/reusables/gallery";
-import { useGsapFadeIn } from "@/hooks/useGsapFadeIn";
-import { useRef } from "react";
 
 export default function Projects() {
   const projects = [
@@ -19,7 +17,7 @@ export default function Projects() {
       // year: "2025",
       name: "Knote Taker",
       description:
-        "A simple app to capture, organize, and format notes with markdown support, providing a fast, and secure note-taking",
+        "A simple app to capture, organize, and format notes with markdown support, providing a fast, and secure note-taking.",
       stack: "Next • Typescript •  Supabase • Tailwind • MDX",
       images: ["/icons/card-view.svg", "/icons/list-view.svg"],
       link: "https://knotetaker.vercel.app",
@@ -48,10 +46,6 @@ export default function Projects() {
     },
   ];
 
-  const projectsRef = useRef<HTMLDivElement>(null);
-
-  useGsapFadeIn({ ref: projectsRef, scroll: true });
-
   return (
     <div className="max-screen-wrapper py-[60px] bg-red" id="projects">
       <div className="max-screen-inner flex flex-col gap-10 w-full items-start font-dm-sans text-black justify-start">
@@ -67,12 +61,11 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              ref={projectsRef}
-              className="flex flex-col border-1 gap-4 items-start justify-between rounded-[10px] w-full md:w-[380px] px-[16px] py-[18px] md:px-[24px] md:py-[24px] border-[#2B3223]/1 dark:border-powder/8 bg-powder/3"
+              className="flex flex-col border-1 gap-4 items-start justify-between rounded-[10px] w-full md:w-[380px] h-fit md:h-[180px] px-[16px] py-[18px] md:px-[24px] md:py-[24px] border-[#2B3223]/5 dark:border-powder/8 bg-powder/5"
             >
               <div className="flex flex-col gap-1 w-full items-start h-full">
-                <div className="flex flex-row gap-2 w-full justify-between">
-                  <h4 className="text-[24px] text-oxford dark:text-white">
+                <div className="flex flex-row gap-2 w-full justify-between ">
+                  <h4 className="text-[16px] md:text-[18px] text-oxford dark:text-white md:font-medium">
                     {project.name}
                   </h4>
                   <div className="flex flex-row gap-2">
@@ -80,40 +73,39 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-oxford h-[30px] poppins text-[13px] rounded-sm w-[30px] flex justify-center items-center border border-[#2B3223]/1 dark:border-powder/8 hover:bg-powder/10 transition-all duration-300"
+                      className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/1 dark:border-powder/8 hover:bg-powder/10"
                     >
                       <img
                         src="/icons/ext-link.svg"
                         alt=""
-                        className="w-[11px] h-[11px]"
+                        className="w-[10px] h-[10px]"
                       />
                     </a>
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-oxford h-[30px] poppins text-[13px] rounded-sm w-[30px] flex justify-center items-center border border-[#2B3223]/1 dark:border-powder/8 hover:bg-powder/10 transition-all duration-300"
+                      className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/1 dark:border-powder/8 hover:bg-powder/10"
                     >
                       <img
                         src="/icons/github-out.svg"
                         alt=""
-                        className="w-[11px] h-[11px]"
+                        className="w-[10px] h-[10px]"
                       />
                     </a>
                   </div>
                 </div>
 
-                <p className="text-[14px] dark:text-[#9d9d9d] text-[#5D605B] line-clamp-3 pb-2 leading-4.5">
+                <p className="text-[14px] dark:text-[#9d9d9d] text-[#5D605B] pb-2 leading-4.5">
                   {project.description}
                 </p>
-                <p className="text-[14px] dark:text-[#9d9d9d] text-[#5D605B]">
-                  {project.stack}
-                </p>
               </div>
-
-              <div className="flex flex-row gap-[2px] w-fit justify-center items-center p-[2px] rounded-sm">
+              <p className="text-[14px] dark:text-[#9d9d9d] text-[#5D605B]">
+                {project.stack}
+              </p>
+              {/* <div className="flex flex-row gap-[2px] w-fit justify-center items-center p-[2px] rounded-sm">
                 <ProjectGallery images={project.images} />
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
