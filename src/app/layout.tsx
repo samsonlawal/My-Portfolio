@@ -6,15 +6,15 @@ import { Analytics } from "@vercel/analytics/next";
 import { AppThemeProvider } from "@/providers/theme-provider";
 // import { HeroProvider } from "@/providers/heroUI";
 
-export const metadata: Metadata = {
-  title: "Samson Lawal | Portfolio",
-  description:
-    "Welcome to my portfolio website! Explore my projects, skills, and experiences. Let's connect and create something amazing together!",
-  icons: {
-    // Reference your image file in the public directory
-    icon: "/icon.jpg",
-  },
-};
+// export const metadata: Metadata = {
+//   title: "Samson Lawal | Portfolio",
+//   description:
+//     "Welcome to my portfolio website! Explore my projects, skills, and experiences. Let's connect and create something amazing together!",
+//   icons: {
+//     // Reference your image file in the public directory
+//     icon: "/icon.jpg",
+//   },
+// };
 
 export default function RootLayout({
   children,
@@ -24,6 +24,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Samson Lawal — Software Engineer</title>
+        <meta
+          name="description"
+          content="I’m a software engineer with a knack for problem-solving and a strong CS background. I build clean, scalable web applications and elegant solutions."
+        />
+
+        {/* Open Graph metadata for link previews */}
+        <meta property="og:title" content="Samson Lawal — Software Engineer" />
+        <meta
+          property="og:description"
+          content="I’m a software engineer with a knack for problem-solving and a strong CS background. I build clean, scalable web applications and elegant solutions."
+        />
+        <meta
+          property="og:image"
+          content="https://samsonlawal.vercel.app/icons/icon.jpg"
+        />
+        <meta property="og:url" content="https://samsonlawal.vercel.app" />
+        <meta property="og:type" content="website" />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-YME5XHC5XG"
