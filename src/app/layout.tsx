@@ -25,13 +25,21 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Samson Lawal — Software Engineer</title>
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@samsondejs" />
+        <meta name="twitter:title" content="Samson Lawal — Software Engineer" />
         <meta
-          name="description"
+          name="twitter:description"
           content="I’m a software engineer with a knack for problem-solving and a strong CS background. I build clean, scalable web applications and elegant solutions."
         />
+        <meta
+          name="twitter:image"
+          content="https://samsonlawal.vercel.app/icons/icon.jpg"
+        />
+        <meta name="twitter:image:alt" content="samson's image" />
 
         {/* Open Graph metadata for link previews */}
-        <meta property="og:title" content="Samson Lawal — Software Engineer" />
+        {/* <meta property="og:title" content="Samson Lawal — Software Engineer" />
         <meta
           property="og:description"
           content="I’m a software engineer with a knack for problem-solving and a strong CS background. I build clean, scalable web applications and elegant solutions."
@@ -41,7 +49,8 @@ export default function RootLayout({
           content="https://samsonlawal.vercel.app/icons/icon.jpg"
         />
         <meta property="og:url" content="https://samsonlawal.vercel.app" />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="website" /> */}
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-YME5XHC5XG"
