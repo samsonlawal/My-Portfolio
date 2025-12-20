@@ -4,9 +4,16 @@ import Link from "next/link";
 import { resolve } from "path";
 
 import { NAV_ITEMS } from "@/lib/constants";
+import { useRef } from "react";
 
 export default function Navbar() {
   const { setTheme, resolvedTheme } = useTheme();
+
+  const homeRef = useRef<HTMLDivElement>(null);
+
+  const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="h-fit w-full justify-between md:flex flex-row items-center hidden py-5 fixed top-0 z-50 transition-all duration-300 backdrop-blur-[2px]">
@@ -25,6 +32,7 @@ export default function Navbar() {
             <Link
               key={index}
               href={item.href}
+              // onClick={() => scrollTo(homeRef)}
               className="text-[14px] hover:bg-white/80 border-transparent border-[1px] hover:border-[#000]/10 dark:hover:border-[1px] dark:hover:border-white/10 dark:hover:bg-[#3b3b3b]/80 flex flex-row gap-2 px-2.5 py-1 rounded-full"
             >
               <img

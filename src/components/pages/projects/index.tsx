@@ -4,7 +4,7 @@ export default function Projects() {
   const projects = [
     {
       // year: "Ongoing",
-      name: "Task Stack",
+      name: "taskStack",
       description:
         "A task/workspace management system with members, roles, comments, attachments.",
       stack: "Next • Tailwind • Typescript • Express • MongoDB",
@@ -15,7 +15,7 @@ export default function Projects() {
 
     {
       // year: "2025",
-      name: "Knote Taker",
+      name: "knoteTaker",
       description:
         "A simple app to capture, organize, and format notes with markdown support, providing a fast, and secure note-taking.",
       stack: "Next • Typescript •  Supabase • Tailwind • MDX",
@@ -26,7 +26,7 @@ export default function Projects() {
 
     {
       // year: "2024",
-      name: "CoinIn",
+      name: "coinIn",
       description:
         "Crypto app that shows the current market price of crypto assets, top gainer and losers, portfolio to keep track of potential assets.",
       stack: "React • Supabase",
@@ -37,7 +37,7 @@ export default function Projects() {
 
     {
       // year: "2023",
-      name: "Movie Release",
+      name: "movieRelease",
       description: "A website for information on movies and TV shows.",
       stack: "React",
       images: ["/icons/MovieRelease-I.png", "/icons/MovieRelease.png"],
@@ -65,7 +65,7 @@ export default function Projects() {
             >
               <div className="flex flex-col gap-1 w-full items-start h-full">
                 <div className="flex flex-row gap-2 w-full justify-between ">
-                  <h4 className="text-[16px] md:text-[18px] text-oxford dark:text-white md:font-medium">
+                  <h4 className="text-[22px] text-oxford dark:text-white md:font-medium">
                     {project.name}
                   </h4>
                   <div className="flex flex-row gap-2">
@@ -73,7 +73,7 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/1 dark:border-powder/8 hover:bg-powder/10"
+                      className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/10 dark:border-powder/8 hover:bg-powder/10"
                     >
                       <img
                         src="/icons/ext-link.svg"
@@ -85,7 +85,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/1 dark:border-powder/8 hover:bg-powder/10"
+                      className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/10 dark:border-powder/8 hover:bg-powder/10"
                     >
                       <img
                         src="/icons/github-out.svg"

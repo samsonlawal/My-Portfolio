@@ -128,7 +128,7 @@ export default function About() {
           >
             Let's talk about me.
           </motion.h3>
-          <p className="text-oxford dark:text-powder text-[16px] md:w-[300px] leading-tight italic">
+          <p className="text-powder text-[16px] md:w-[300px] leading-tight italic">
             My favourite topic.
           </p>
         </div>
@@ -140,7 +140,7 @@ export default function About() {
           >
             Let's talk about me.
           </motion.h3>
-          <p className="text-oxford dark:text-powder text-[16px] md:w-[300px] leading-tight italic">
+          <p className="text-powder text-[16px] md:w-[300px] leading-tight italic">
             My favourite topic.
           </p>
         </div>

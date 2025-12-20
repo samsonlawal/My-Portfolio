@@ -29,20 +29,22 @@ const WORK_EXPERIENCE = [
 export default function Works() {
   const worksRef = useRef<HTMLDivElement>(null);
 
-  useGsapFadeIn({ ref: worksRef, scroll: true });
+  const workRef = useRef<HTMLDivElement>(null);
+
+  useGsapFadeIn({ ref: workRef, scroll: true });
 
   return (
-    <div className="max-screen-wrapper py-[80px]" id="work">
+    <div className="max-screen-wrapper py-[80px]" id="work" ref={worksRef}>
       <div className="max-screen-inner flex flex-col gap-12 w-full items-start font-dm-sans  text-black justify-between">
         <h3
-          ref={worksRef}
+          ref={workRef}
           className="text-[30px] md:text-[50px] tracking-tight leading-10 lg:leading-16 italic text-oxford dark:text-[#fff]"
         >
           Work Experience
         </h3>
 
         <div
-          ref={worksRef}
+          ref={workRef}
           className="flex flex-col md:flex-row items-center w-full gap-8"
         >
           {WORK_EXPERIENCE.map((work, index) => (
@@ -60,7 +62,7 @@ export default function Works() {
                       rel="noopener noreferrer"
                       className="text-oxford dark:text-white  hover:text-[#2B3223] dark:hover:text-powder transition-all duration-300"
                     >
-                      <h4 className="text-[24px] flex flex-row gap-1 justify-center items-center">
+                      <h4 className="text-[22px] flex flex-row gap-1 justify-center items-center">
                         {work.title}
                       </h4>
                     </a>
@@ -68,7 +70,9 @@ export default function Works() {
                     <p className="text-[14px] text-powder">
                       {work.role}
 
-                      <span className="ml-1 text-powder/60">| {work.year}</span>
+                      <span className="ml-1 text-powder dark:text-powder/60">
+                        | {work.year}
+                      </span>
                     </p>
                   </div>
 
@@ -76,7 +80,7 @@ export default function Works() {
                     href={work.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/1 dark:border-powder/8 hover:bg-powder/10"
+                    className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/10 dark:border-powder/8 hover:bg-powder/10"
                   >
                     <img
                       src="/icons/ext-link.svg"

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 // import SmoothScroll from "@/providers/smoothScroll";
 import { AppThemeProvider } from "@/providers/theme-provider";
+// import { HeroProvider } from "@/providers/heroUI";
 
 export const metadata: Metadata = {
   title: "Samson Lawal | Portfolio",
@@ -39,8 +40,10 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {/* <SmoothScroll /> */}
+        {/* <HeroProvider> */}
         <AppThemeProvider>{children}</AppThemeProvider>
         <Analytics />
+        {/* </HeroProvider> */}
       </body>
     </html>
   );

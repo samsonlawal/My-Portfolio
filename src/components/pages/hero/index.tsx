@@ -11,12 +11,16 @@ export default function Hero() {
 
   const textRef = useRef<HTMLHeadingElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
+  const homeRef = useRef<HTMLDivElement>(null);
 
   useGsapFadeIn({ ref: textRef, delay: 0.2 });
   useGsapFadeIn({ ref: imgRef, delay: 0.4 });
 
   return (
-    <div className="w-full md:mb-14 flex flex-col gap-5 h-fit md:h-[100vh] justify-center items-center">
+    <div
+      className="w-full md:mb-14 flex flex-col gap-5 h-fit md:h-[100vh] justify-center items-center"
+      ref={homeRef}
+    >
       {/* <div>
         <div className="flex flex-row gap-4 items-center">
           {extras.map((extra, index) => (

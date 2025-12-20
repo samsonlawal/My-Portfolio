@@ -9,7 +9,7 @@ export default function Contact() {
           <h1 className="max-w-430 text-[30px] lg:text-[60px] md:w-[450px] xl:w-[700px] tracking-tight leading-10 lg:leading-16 italic text-[#181C14] dark:text-[#fff]">
             Have an exciting project you need help with?
           </h1>
-          <p className="text-[#181C14] dark:text-powder/70 text-[16px] md:w-[300px] leading-tight italic font-medium">
+          <p className="text-gray-500 dark:text-powder/70 text-[16px] md:w-[300px] leading-tight italic font-medium">
             You can send me an email or reach me through any of the socials
             below
           </p>
