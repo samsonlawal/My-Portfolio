@@ -15,6 +15,8 @@ export default function Footer() {
     setCopyText(text);
   }
 
+  const year = new Date().getFullYear();
+
   return (
     <div className="max-screen-wrapper">
       <div className="max-screen-inner flex flex-col gap-6 w-full items-center poppins h-fit text-gray-500 justify-between pb-[120px] pt-[36px] md:py-[40px] md:flex-row-reverse">
@@ -30,7 +32,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <span
-                  className={`flex flex-row gap-1 cursor-pointer w-9 h-9 justify-center items-center bg-[#181C14]/20 rounded-full hover:bg-[#181c14]/40 dark:bg-[#90aecf]/10 dark:hover:bg-[#90aecf] transition-colors duration-300 ${
+                  className={`flex flex-row gap-1 cursor-pointer w-9 h-9 justify-center items-center bg-[#181C14]/10 rounded-full hover:bg-[#181c14]/40 dark:bg-[#90aecf]/10 dark:hover:bg-[#90aecf] transition-colors duration-300 border-[#181C14]/2 dark:border-[#90aecf]/2 ${
                     resolvedTheme === "dark"
                       ? "dark:bg-[#90aecf]/10 dark:hover:bg-[#90aecf]"
                       : ""
@@ -105,7 +107,7 @@ export default function Footer() {
 
         <div
           onClick={() => {}}
-          className="cursor-pointer flex flex-row gap-2 px-4 py-1 justify-center items-center rounded-full border-[1.5px] border-[#181C14]/20 bg-[#181C14]/20 hover:bg-[#181c14]/40 dark:border-[#90aecf]/0 dark:bg-powder/8 transition-colors duration-300"
+          className="cursor-pointer flex flex-row gap-2 px-4 py-1 justify-center items-center rounded-full border-[1.5px] border-[#181C14]/2 bg-[#181C14]/10 hover:bg-[#181c14]/40 dark:border-[#90aecf]/0 dark:bg-powder/8 transition-colors duration-300"
         >
           <Tooltip content="copy email" showArrow={true} color="default">
             <img
@@ -122,8 +124,8 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex flex-row gap-2 w-fit justify-center items-center md:justify-start ">
-          <p className=" text-sm font-medium text-gray-500/70">© 2025</p>
-          <div className="text-oxford dark:text-gray-500/30">|</div>
+          <p className=" text-sm font-medium text-gray-500/70">© {year}.</p>
+          {/* <div className="text-oxford|30 dark:text-gray-500/30">|</div> */}
 
           <p className=" text-sm font-medium text-gray-500/70">
             Samson Deji Lawal
