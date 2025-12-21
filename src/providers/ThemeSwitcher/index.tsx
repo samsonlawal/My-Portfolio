@@ -31,7 +31,7 @@ function ThemeSwitcher() {
       >
         {resolvedTheme === "light" ? (
           <img
-            src="/icons/sun-dark.svg"
+            src="/icons/moon.svg"
             alt="sun dark"
             className=" w-[16px] h-[16px] hover:rotate-180 transition-all duration-3000"
           />
