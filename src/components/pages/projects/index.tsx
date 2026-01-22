@@ -53,8 +53,8 @@ export default function Projects() {
           Projects
         </h3>
         <div
-          className="  grid w-full gap-4
-  justify-center
+          className="  flex flex-col md:flex-row flex-wrap w-full gap-3
+  justify-start
   grid-cols-1
   md:grid-cols-3"
         >
@@ -65,7 +65,7 @@ export default function Projects() {
             >
               <div className="flex flex-col gap-1 w-full items-start h-full">
                 <div className="flex flex-row gap-2 w-full justify-between ">
-                  <h4 className="text-[22px] text-oxford dark:text-white md:font-medium">
+                  <h4 className="text-[19px] text-oxford dark:text-white md:font-medium">
                     {project.name}
                   </h4>
                   <div className="flex flex-row gap-2">
