@@ -116,12 +116,12 @@ export default function About() {
   useGsapFadeIn({ ref: aboutRef, scroll: true });
 
   return (
-    <div className="max-screen-wrapper" ref={aboutRef}>
+    <div className="max-screen-wrapper py-[120px]" ref={aboutRef}>
       <div
-        className="max-screen-inner flex flex-col gap-10 xl:gap-0 xl:flex-row w-full items-center font-dm-sans  text-black justify-center"
+        className="max-screen-inner flex flex-col gap-10 xl:gap-0 xl:flex-row w-full items-start font-dm-sans  text-black justify-between"
         id="about"
       >
-        {/* <div className="hidden flex-col justify-between items-start w-[480px] sticky top-[100px] xl:flex">
+        <div className="hidden flex-col justify-between items-start w-[480px] sticky top-[100px] xl:flex">
           <motion.h3
             {...ANIMATE_PROPS({ delay: 0 })}
             className="text-[40px] lg:text-[50px] tracking-tight leading-10 lg:leading-16 italic text-oxford dark:text-[#fff]"
@@ -143,9 +143,9 @@ export default function About() {
           <p className="text-powder text-[16px] md:w-[300px] leading-tight italic">
             My favourite topic.
           </p>
-        </div> */}
+        </div>
 
-        <div className=" flex flex-col items-center text-black justify-center gap-14 md:gap-8 lg:w-[600px]">
+        <div className=" flex flex-col items-start text-black justify-between gap-14 md:gap-8 lg:w-[600px]">
           {/* <img
             src="/avatar.jpg"
             alt="avatar"
@@ -157,7 +157,7 @@ export default function About() {
               objectPosition: "center bottom",
             }}
           /> */}
-          {/* <div className="rounded-[10px]  justify-center items-start gap-1 flex flex-col">
+          <div className="rounded-[10px]  justify-center items-start gap-1 flex flex-col">
             <h3 className="text-[20px] lg:text-[26px] tracking-tight text-oxford dark:text-white">
               About Me
             </h3>
@@ -172,33 +172,29 @@ export default function About() {
               My expertise lies in crafting comprehensive solutions through
               performance-driven development.
             </p>
-          </div> */}
+          </div>
 
           {/* Stack */}
           <div className="rounded-[10px] flex flex-col">
-            <h3 className="text-[20px] lg:text-[26px] tracking-tight text-oxford dark:text-white italic">
-                        <span className="text-[#F1A7B4] pr-[2px]">{"{"}</span>
-
+            <h3 className="text-[20px] lg:text-[26px] tracking-tight text-oxford dark:text-white">
               Tech Stack
-                        <span className="text-[#F1A7B4] pl-[2px]">{"}"}</span>
-
             </h3>
 
             {/*  */}
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <h3 className="text-[16px] dark:text-[#9d9d9d] text-[#5D605B] tracking-tight mb-4">
+                <h3 className="text-[16px] dark:text-[#9d9d9d] text-[#5D605B] tracking-tight">
                   Languages and Frameworks
                 </h3>
                 {/*  */}
                 <div className="flex flex-row gap-2 flex-wrap items-center justify-start">
                   {Languages.map((language, index) => (
                     <span
-                      className="flex flex-row gap-1 items-center justify-center w-fit bg-[#1a1a1a] dark:bg-[#1a1a1a] px-[8px] py-[4px] rounded-[4px]"
+                      className="flex flex-row gap-1 items-center justify-center w-fit bg-oxford/14 dark:bg-powder/14 px-[8px] py-[4px] rounded-[4px]"
                       key={index}
                     >
                       <img src={language.icon} alt={language.name} />
-                      <p className="text-[13px] text-[#9d9d9d] dark:text-[#9d9d9d]">
+                      <p className="text-[13px] text-oxford/70 dark:text-powder">
                         {language.name}
                       </p>{" "}
                     </span>
@@ -213,11 +209,11 @@ export default function About() {
                 <div className="flex flex-row gap-2 flex-wrap items-center justify-start">
                   {tools.map((tool, index) => (
                     <span
-                      className="flex flex-row gap-1 items-center justify-center w-fit bg-[#1a1a1a] dark:bg-[#1a1a1a] px-[8px] py-[4px] rounded-[4px] hover:bg-[#F1A7B4]"
+                      className="flex flex-row gap-1 items-center justify-center w-fit bg-oxford/14 dark:bg-powder/14 px-[8px] py-[4px] rounded-[4px]"
                       key={index}
                     >
                       <img src={tool.icon} alt={tool.name} />
-                      <p className="text-[13px] text-[#9d9d9d] dark:[#9d9d9d]">
+                      <p className="text-[13px] text-oxford/70 dark:text-powder">
                         {tool.name}
                       </p>{" "}
                     </span>

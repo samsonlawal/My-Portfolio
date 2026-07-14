@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       ) : (
         <div
-          className=" flex flex-col items-center font-dm-sans min-h-screen bg-[#fff] dark:bg-oxford text-black transition-all duration-300"
+          className=" flex flex-col items-center font-dm-sans min-h-screen bg-[#fff] dark:bg-[#111] text-black transition-all duration-300"
           // ref={scrollRef}
           // data-scroll-container
         >

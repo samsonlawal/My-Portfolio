@@ -2,34 +2,46 @@ import { useGsapFadeIn } from "@/hooks/useGsapFadeIn";
 import React, { useRef } from "react";
 
 const WORK_EXPERIENCE = [
- 
+  {
+    title: "webbie",
+    // description:
+    //   "A website design discovery platform that showcases trendsetting website designs. I implemented key product functionalities, worked alongside designers and backend engineers to ensure pixel-perfect designs and seamless API Integration.",
+    description:
+      "A website design discovery platform showcasing trendsetting digital products. I implemented core frontend features and collaborated with designers and backend engineers to deliver pixel-accurate interfaces with smooth API integration.",
+    techStack: "React • Typescript • Tailwind ",
+    image: "/icons/webbie-large.svg",
+    alt: "webbie-img",
+    link: "https://webbie.io",
+    year: "Jun - Feb 2024",
+    role: "Frontend Developer",
+  },
   {
     title: "cvspan",
     // description:
     //   "A product development agency transitioning from UI/UX design and education to full-scale product development. I contributed to the redevelopment user interfaces for their platform showcasing their expanded product development capabilities.",
     description:
-      "A product development agency evolving from UI/UX design and education into full-scale product development.",
-    // techStack: "React • Typescript • Tailwind ",
+      "A product development agency evolving from UI/UX design and education into full-scale product development. I contributed to rebuilding user interfaces that reflected their expanded product offerings and capabilities.",
+    techStack: "React • Typescript • Tailwind ",
     image: "/icons/cvspan-large.svg",
     alt: "cvspan-img",
-    // link: "https://cvspan.com",
+    link: "https://cvspan.com",
     year: "Jun - Feb 2024",
     role: "Frontend Developer",
   },
   {
     title: "medvive",
     description:
-      "Digital health company that connects patients directly with licensed healthcare providers online",
-    // techStack: "React • Typescript • Firebase • Tailwind ",
+      "MedVive is a health-tech product focused on improving digital access to healthcare services. I worked as a frontend intern supporting the development of user-facing features and internal tools.",
+    techStack: "React • Typescript • Firebase • Tailwind ",
     image: "/icons/medvive-logo.png",
     alt: "medvive-img",
-    // link: "https://medvive.ng",
+    link: "https://medvive.ng",
     year: "Jun - Present",
     role: "Frontend Developer",
     bullets: [
       "refactored codebase to typescript",
       "built responsive uis",
-      "INtegrated wallet feature",
+      "INtegrated a wallet feature",
     ],
   },
 ];
@@ -42,40 +54,38 @@ export default function Works() {
   useGsapFadeIn({ ref: workRef, scroll: true });
 
   return (
-    <div className="max-screen-wrapper py-[160px]" id="work" ref={workRef}>
-      <div className="max-screen-inner flex flex-col gap-6 w-full items-start md:items-center font-dm-sans  text-black justify-between">
-        <div 
-          // ref={workRef}
+    <div className="max-screen-wrapper py-[80px]" id="work" ref={worksRef}>
+      <div className="max-screen-inner flex flex-col gap-12 w-full items-start font-dm-sans  text-black justify-between">
+        <h3
+          ref={workRef}
+          className="text-[30px] md:text-[50px] tracking-tight leading-10 lg:leading-16 italic text-oxford dark:text-[#fff]"
         >
-          <h3
-          className="text-[26px] md:text-[50px] tracking-tight leading-10 lg:leading-16 italic text-oxford dark:text-[#fff] "
-        >
-          <span className="text-[#FFC914] pr-[4px]">{"{"}</span>
           Work Experience
-          <span className="text-[#FFC914] pl-[4px]">{"}"}</span>
         </h3>
-        </div>
 
         <div
-          // ref={workRef}
-          className="flex flex-col md:flex-row flex-wrap items-center justify-center w-full gap-3"
+          ref={workRef}
+          className="flex flex-col md:flex-row flex-wrap items-center w-full gap-3"
         >
           {WORK_EXPERIENCE.map((work, index) => (
             <div
               // ref={worksRef}
               key={index}
-              className="flex flex-col border-1 h-fit gap-6 items-center justify-center rounded-[10px] w-full md:w-[380px] md:flex-shrink-0 px-[16px] py-[10px] md:py-[18px] md:px-[24px] md:py-[24px] border-[#2B3223]/1 dark:border-powder/8 bg-[#1a1a1a]/30 transition-all duration-300 hover:-rotate-4 hover:bg-[#FFC914]"
+              className="flex flex-col border-1 h-fit gap-4 items-start justify-center rounded-[10px] w-full md:w-[380px] md:flex-shrink-0 px-[16px] py-[18px] md:px-[24px] md:py-[24px] border-[#2B3223]/1 dark:border-powder/8 bg-powder/3 transition-all duration-300"
             >
               <div className="flex flex-col gap-3 w-full items-start">
                 <div className="flex flex-row w-full items-start justify-between">
                   <div className="flex flex-col w-fit items-start justify-start -space-y-1.5">
-                    <span
+                    <a
+                      href={work.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-oxford dark:text-white  hover:text-[#2B3223] dark:hover:text-powder transition-all duration-300"
                     >
                       <h4 className="text-[22px] flex flex-row gap-1 justify-center items-center">
                         {work.title}
                       </h4>
-                    </span>
+                    </a>
 
                     <p className="text-[14px] text-powder">
                       {work.role}
@@ -86,7 +96,7 @@ export default function Works() {
                     </p>
                   </div>
 
-                  {/* <a
+                  <a
                     href={work.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -97,16 +107,16 @@ export default function Works() {
                       alt=""
                       className="w-[10px] h-[10px]"
                     />
-                  </a> */}
+                  </a>
                 </div>
 
-                <p className="text-[14px] min-h-[60px] dark:text-[#9d9d9d] text-[#5D605B] leading-4.5">
+                <p className="text-[14px] min-h-[100px] dark:text-[#9d9d9d] text-[#5D605B] leading-4.5">
                   {work.description}
-                  {/* <br />
+                  <br />
                   <br />
                   <span className="dark:text-[#9d9d9d] text-[#5D605B]">
                     {work.techStack}
-                  </span> */}
+                  </span>
                 </p>
               </div>
               {/* <div className="flex flex-row gap-1 justify-center items-end bg-oxford/20 dark:bg-powder/20 p-[2px] rounded-md">

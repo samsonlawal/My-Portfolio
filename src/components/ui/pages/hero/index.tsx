@@ -83,7 +83,7 @@ export default function Hero() {
             className="h-full flex flex-col gap-4 justify-center items-center  md:justify-end md:items-start"
             ref={textRef}
           >
-            <div className="dark:bg-white bg-[#111] px-2 py-1.5 rounded-sm hidden flex-row items-center gap-1 md:flex cursor-pointer">
+            <div className="dark:bg-white bg-[#262626] px-2 py-1.5 rounded-sm hidden flex-row items-center gap-1 md:flex cursor-pointer">
               {resolvedTheme === "dark" ? (
                 <img
                   src="/icons/code-symbol.svg"
@@ -98,7 +98,7 @@ export default function Hero() {
                 />
               )}
               <p className="text-[13px] font-medium dark:text-[#262626] text-white">
-                Frontend Developer
+                Software Engineer
               </p>
             </div>
 
@@ -111,18 +111,7 @@ export default function Hero() {
                 {/* I build digital products that are fast, reliable, & easy to use.
                 My work focuses on creating clean, responsive interfaces that
                 deliver a smooth experience on any device. */}
-                I'm an 
-                
-                  <span className="text-[#F1A7B4] px-[2px] italic">{"{"}</span>
-
-                  <span className="italic text-[#FFC914]/50 hover:text-[#FFC914] transition-all duration-300">
-                  developer
-                  </span>
-                
-
-                  <span className="text-[#F1A7B4] px-[2px] italic">{"}"}</span>
-                
-                 with a knack for problem-solving and a strong
+                I'm an engineer with a knack for problem-solving and a strong
                 background in computer science. I enjoy building scalable and
                 maintainable web applications/solutions.
               </p>

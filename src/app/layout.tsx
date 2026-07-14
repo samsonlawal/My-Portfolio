@@ -27,7 +27,7 @@ export default function RootLayout({
         <title>Samson Lawal — Software Engineer</title>
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@samsondejs" />
-        <meta name="twitter:title" content="Samson Lawal — Software Engineer" />
+        <meta name="twitter:title" content="Samson Lawal - Frontend Developer" />
         <meta
           name="twitter:description"
           content="I’m a software engineer with a knack for problem-solving and a strong CS background. I build clean, scalable web applications and elegant solutions."

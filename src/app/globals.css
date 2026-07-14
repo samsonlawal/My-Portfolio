@@ -1,5 +1,6 @@
 @import "./font-dm-sans.css";
 @import "tailwindcss";
+/* @import "../tailwind.config.ts"; */
 
 :root {
   --background: #ffffff;
