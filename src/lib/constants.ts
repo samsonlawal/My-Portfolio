@@ -47,27 +47,27 @@ export const SOCIAL_LINKS = [
     href: "https://github.com/samsonlawal",
     iconLight: "githubb-dark",
     iconDark: "githubb-lighter",
-    width: "w-[16px]",
+    width: "w-[20px]",
   },
   {
     name: "Twitter",
     href: "https://x.com/samsondejs",
     iconLight: "twitterr-dark",
     iconDark: "twitter-lighter",
-    width: "w-[16px]",
+    width: "w-[22px]",
   },
   {
     name: "Linkedin",
     href: "https://linkedin.com/in/samsonlawal", // Assuming standard LinkedIn URL format; user had "https://"
     iconLight: "linkedinn-dark",
     iconDark: "linkedin-lighter",
-    width: "w-[14px]",
+    width: "w-[16px]",
   },
   {
     name: "Email",
     href: "mailto:samsonlawal@example.com", // Placeholder, need to ask user or infer? User had "https://" for email too which is wrong, probably mailto.
     iconLight: "mail-dark",
     iconDark: "emaill",
-    width: "w-[16px]",
+    width: "w-[22px]",
   },
 ];

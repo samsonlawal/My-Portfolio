@@ -11,39 +11,31 @@ import Contact from "@/components/pages/contact";
 import Footer from "@/components/pages/footer";
 import { AppThemeProvider } from "@/providers/theme-provider";
 import { useEffect, useRef, useState } from "react";
-import LocomotiveScroll from "locomotive-scroll"; // In _app.js or layout.js
-import "locomotive-scroll/dist/locomotive-scroll.css";
 import Head from "next/head";
-import NameHandwriting from "@/components/reusables/Handwriting";
+import Preloader from "@/components/reusables/Preloader";
+import Blog from "@/components/pages/blog";
 
 export default function Home() {
-  // const scrollRef = useRef<HTMLDivElement>(null);
-  // useEffect(() => {
-  //   let scroll: LocomotiveScroll | null = null;
-
-  //   if (scrollRef.current) {
-  //     scroll = new LocomotiveScroll({
-  //       el: scrollRef.current, // Now TypeScript knows it's not null
-  //       smooth: true,
-  //       multiplier: 1,
-  //       class: "is-revealed",
-  //     });
-  //   }
-
-  //   return () => {
-  //     if (scroll) scroll.destroy();
-  //   };
-  // }, []);
-
+  // Loading state completely commented out to bypass preloader screen
+  /*
   const [loading, setLoading] = useState(true);
+  const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    const fadeTimer = setTimeout(() => {
+      setFade(true);
+    }, 1800);
 
-    return () => clearTimeout(timer);
+    const loadingTimer = setTimeout(() => {
+      setLoading(false);
+    }, 2300);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(loadingTimer);
+    };
   }, []);
+  */
 
   return (
     <>
@@ -68,26 +60,15 @@ export default function Home() {
         <meta property="og:type" content="website" />
       </Head>
 
-      {loading ? (
-        <div className="flex flex-col items-center font-dm-sans justify-center min-h-screen bg-[#fff] dark:bg-oxford text-black transition-all duration-300">
-          <div className="loader"></div>
-        </div>
-      ) : (
-        <div
-          className=" flex flex-col items-center font-dm-sans min-h-screen bg-[#fff] dark:bg-[#111] text-black transition-all duration-300"
-          // ref={scrollRef}
-          // data-scroll-container
-        >
-          {/* <div className="max-screen-inner"> */}
-          <Main />
-          <About />
-          <Works />
-          <Projects />
-          <Contact />
-          <Footer />
-          {/* </div> */}
-        </div>
-      )}
+      <div className="flex flex-col items-center font-dm-sans min-h-screen bg-[#fff] dark:bg-[#111] text-black transition-all duration-300">
+        <Main />
+        {/* <About /> */}
+        <Works />
+        <Projects />
+        {/* <Blog /> */}
+        <Contact />
+        <Footer />
+      </div>
     </>
   );
 }

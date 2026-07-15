@@ -1,164 +1,22 @@
-import ProjectGallery from "@/components/reusables/gallery";
+"use client";
+
+import ProjectsLayout from "./ProjectsLayout"; // Interactive List
 
 export default function Projects() {
-  const projects = [
- {
-      // year: "Ongoing",
-      name: "webbie.io",
-      description:
-        "Website design discovery platform showcasing trendsetting digital products",
-      stack: "Next • Tailwind • Typescript",
-      images: ["/icons/card-view.svg", "/icons/list-view.svg"],
-      link: "https://webbie.io",
-      // github: "https://github.com/samsonlawal/Task-Management-Workspace",
-    },
-
-    {
-      // year: "Ongoing",
-      name: "cvspan.com",
-      description:
-        "Design and development agency and training provider.",
-      stack: "Next • Typescript • Tailwind ",
-      images: ["/icons/card-view.svg", "/icons/list-view.svg"],
-      link: "https://cvspan.com",
-      // github: "https://github.com/samsonlawal/Task-Management-Workspace",
-    },
-
-     {
-      // year: "Ongoing",
-      name: "medvive",
-      description:
-        "Digital health website/web-app connecting patients directly with licensed healthcare providers online",
-      stack: "Next • Tailwind • Typescript • Firebase",
-      images: ["/icons/card-view.svg", "/icons/list-view.svg"],
-      link: "https://medvive.ng",
-      
-      // github: "https://github.com/samsonlawal/Task-Management-Workspace",
-    },
-
-    {
-      // year: "Ongoing",
-      name: "Discount Drinks",
-      description:
-        "UK-based e-commerce platform specializing in the bulk sale of discounted alcoholic and non-alcoholic beverages.",
-      stack: "Next • Tailwind • Typescript • Express • MongoDB",
-      images: ["/icons/card-view.svg", "/icons/list-view.svg"],
-      link: "https://discountdrinksandmoreltd.co.uk/",
-      // github: "https://github.com/samsonlawal/Task-Management-Workspace",
-    },
-
-    {
-      // year: "Ongoing",
-      name: "taskStack",
-      description:
-        "A task/workspace management system with members, roles, comments, attachments.",
-      stack: "Next • Tailwind • Typescript • Express • MongoDB",
-      images: ["/icons/card-view.svg", "/icons/list-view.svg"],
-      link: "https://taskstackhq.vercel.app",
-      github: "https://github.com/samsonlawal/Task-Management-Workspace",
-    },
-
-    {
-      // year: "2025",
-      name: "knoteTaker",
-      description:
-        "A simple app to capture, organize, and format notes with markdown support, providing a fast, and secure note-taking.",
-      stack: "Next • Typescript •  Supabase • Tailwind • MDX",
-      images: ["/icons/card-view.svg", "/icons/list-view.svg"],
-      link: "https://knotetaker.vercel.app",
-      github: "https://github.com/samsonlawal/Note-Taking-App",
-    },
-
-    // {
-    //   year: "2024",
-    //   name: "coinIn",
-    //   description:
-    //     "Crypto app that shows the current market price of crypto assets, top gainer and losers, portfolio to keep track of potential assets.",
-    //   stack: "React • Supabase",
-    //   images: ["/icons/card-view.svg", "/icons/list-view.svg"],
-    //   link: "https://coinin.netlify.app/",
-    //   github: "https://github.com/samsonlawal/CoinIn",
-    // },
-
-    // {
-    //   year: "2023",
-    //   name: "movieRelease",
-    //   description: "A website for information on movies and TV shows.",
-    //   stack: "React",
-    //   images: ["/icons/MovieRelease-I.png", "/icons/MovieRelease.png"],
-    //   link: "https://movierelease.netlify.app",
-    //   github: "https://github.com/samsonlawal/MovieRelease",
-    // },
-  ];
-
   return (
-    <div className="max-screen-wrapper py-[60px] bg-red" id="projects">
-      <div className="max-screen-inner flex flex-col gap-6 md:gap-10 w-full items-start font-dm-sans text-black justify-start">
-        <h3 className="text-[30px] lg:text-[50px] tracking-tight leading-10 lg:leading-16 italic text-oxford dark:text-[#fff]">
-          
-          <span className="text-[#48CAE4] ">{"{ "}</span>
-          
+    <div className="max-screen-wrapper py-[80px] md:py-[120px]" id="projects">
+      <div className="max-screen-inner flex flex-col gap-3 md:gap-4 w-full items-start font-dm-sans text-black justify-start">
+        
+        {/* Header */}
+        <h3 className="text-[30px] lg:text-[50px] tracking-tight leading-10 lg:leading-16 italic text-[#fff] hover:text-[#48CAE4] transition-all duration-300">
+          <span className="text-[#48CAE4]">{"{ "}</span>
           Projects
-
-          <span className="text-[#48CAE4] ">{" }"}</span>
-
+          <span className="text-[#48CAE4]">{" }"}</span>
         </h3>
-        <div
-          className="  flex flex-col md:flex-row flex-wrap w-full gap-3
-  justify-start
-  grid-cols-1
-  md:grid-cols-3"
-        >
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="flex flex-col border-1 gap-2 items-start justify-between rounded-[10px] w-full md:w-[380px] h-fit md:h-[180px] px-[16px] py-[18px] md:px-[24px] md:py-[24px] border-[#2B3223]/5 dark:border-powder/8 bg-[#1a1a1a]/10 hover:bg-[#48CAE4] group transition-transfrom duration-300 hover:-rotate-4"
-            >
-              <div className="flex flex-col gap-1 w-full items-start h-full">
-                <div className="flex flex-row gap-2 w-full justify-between ">
-                  <h4 className="text-[19px] text-oxford dark:text-white md:font-medium group-hover:text-[#000]">
-                    {project.name}
-                  </h4>
-                  <div className="flex flex-row gap-2">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/10 dark:border-powder/8 hover:bg-powder/10"
-                    >
-                      <img
-                        src="/icons/ext-link.svg"
-                        alt=""
-                        className="w-[10px] h-[10px]"
-                      />
-                    </a>
-                    {/* <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-oxford h-[26px] poppins text-[13px] rounded-sm w-[26px] flex justify-center items-center border border-[#2B3223]/10 dark:border-powder/8 hover:bg-powder/10"
-                    >
-                      <img
-                        src="/icons/github-out.svg"
-                        alt=""
-                        className="w-[10px] h-[10px]"
-                      />
-                    </a> */}
-                  </div>
-                </div>
 
-                <p className="text-[14px] dark:text-[#9d9d9d] text-[#5D605B] pb-2 leading-4.5 group-hover:text-[#1a1a1a]">
-                  {project.description}
-                </p>
-              </div>
-              <p className="text-[14px] dark:text-[#9d9d9d] text-[#5D605B]">
-                {project.stack}
-              </p>
-              {/* <div className="flex flex-row gap-[2px] w-fit justify-center items-center p-[2px] rounded-sm">
-                <ProjectGallery images={project.images} />
-              </div> */}
-            </div>
-          ))}
+        {/* Render Layout */}
+        <div className="w-full mt-0">
+          <ProjectsLayout />
         </div>
       </div>
     </div>
