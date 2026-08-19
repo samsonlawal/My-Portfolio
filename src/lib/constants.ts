@@ -64,10 +64,10 @@ export const SOCIAL_LINKS = [
     width: "w-[16px]",
   },
   {
-    name: "Email",
-    href: "mailto:samsonlawal@example.com", // Placeholder, need to ask user or infer? User had "https://" for email too which is wrong, probably mailto.
-    iconLight: "mail-dark",
-    iconDark: "emaill",
+    name: "Resume",
+    href: "/resume.pdf",
+    iconLight: "resume-dark",
+    iconDark: "resume-lighter",
     width: "w-[22px]",
   },
 ];

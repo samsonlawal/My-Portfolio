@@ -1,21 +1,18 @@
 "use client";
 
-import { useGsapFadeIn } from "@/hooks/useGsapFadeIn";
 import React, { useRef } from "react";
 import WorkLayout from "./WorkLayout";
 
 export default function Works() {
   const workRef = useRef<HTMLDivElement>(null);
 
-  useGsapFadeIn({ ref: workRef, scroll: true });
-
   return (
-    <div className="max-screen-wrapper py-[80px] md:py-[120px] h-fit" id="work" ref={workRef}>
-      <div className="max-screen-inner flex flex-col gap-4 w-full items-start font-dm-sans text-black justify-start">
+    <div className="w-full h-fit lg:mt-6 lg:px-6" id="work">
+      <div className="flex flex-col gap-4 w-full items-start font-dm-sans text-black justify-start">
         
         {/* Header */}
         <div>
-          <h3 className="text-[26px] md:text-[50px] tracking-tight leading-10 lg:leading-16 italic text-[#fff] hover:text-[#FFC914] transition-colors duration-300">
+          <h3 className="text-[24px] lg:text-[32px] tracking-tight leading-8 italic text-[#fff] hover:text-[#FFC914] transition-colors duration-300">
             <span className="text-[#FFC914] pr-[4px]">{"{"}</span>
             Work Experience
             <span className="text-[#FFC914] pl-[4px]">{"}"}</span>

@@ -16,26 +16,6 @@ import Preloader from "@/components/reusables/Preloader";
 import Blog from "@/components/pages/blog";
 
 export default function Home() {
-  // Loading state completely commented out to bypass preloader screen
-  /*
-  const [loading, setLoading] = useState(true);
-  const [fade, setFade] = useState(false);
-
-  useEffect(() => {
-    const fadeTimer = setTimeout(() => {
-      setFade(true);
-    }, 1800);
-
-    const loadingTimer = setTimeout(() => {
-      setLoading(false);
-    }, 2300);
-
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(loadingTimer);
-    };
-  }, []);
-  */
 
   return (
     <>
@@ -60,14 +40,17 @@ export default function Home() {
         <meta property="og:type" content="website" />
       </Head>
 
-      <div className="flex flex-col items-center font-dm-sans min-h-screen bg-[#fff] dark:bg-[#111] text-black transition-all duration-300">
-        <Main />
-        {/* <About /> */}
-        <Works />
-        <Projects />
-        {/* <Blog /> */}
-        <Contact />
-        <Footer />
+      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto min-h-screen w-full px-3 lg:px-6 font-dm-sans bg-[#fff] dark:bg-[#111] text-black transition-all duration-300">
+        <div className="lg:w-[45%] lg:sticky lg:top-0 h-fit lg:h-screen lg:py-0 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <Main />
+        </div>
+        <div className="lg:flex-1 flex flex-col gap-24 py-[60px] lg:py-[60px] lg:pl-18">
+          {/* <About /> */}
+          <Works />
+          <Projects />
+          <Contact />
+          <Footer />
+        </div>
       </div>
     </>
   );

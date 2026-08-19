@@ -14,7 +14,7 @@
 }
 
 .max-screen-wrapper {
-  @apply w-full px-[14px] lg:px-[90px];
+  @apply w-full px-[4px] lg:px-[90px];
 }
 
 .max-screen-inner {

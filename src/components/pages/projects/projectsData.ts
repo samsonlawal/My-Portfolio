@@ -9,14 +9,14 @@ export interface Project {
 }
 
 export const PROJECTS_DATA: Project[] = [
-  {
-    name: "Webbie",
-    description: "Website design discovery platform showcasing trendsetting digital products.",
-    stack: "Next.js • TailwindCSS • TypeScript",
-    images: ["/icons/card-view.svg", "/icons/list-view.svg"],
-    link: "https://webbie.io",
-    featured: true,
-  },
+  // {
+  //   name: "Webbie",
+  //   description: "Website design discovery platform showcasing trendsetting digital products.",
+  //   stack: "Next.js • TailwindCSS • TypeScript",
+  //   images: ["/icons/card-view.svg", "/icons/list-view.svg"],
+  //   link: "https://webbie.io",
+  //   featured: true,
+  // },
   {
     name: "Discount Drinks",
     description: "UK-based e-commerce platform specializing in the bulk sale of discounted alcoholic and non-alcoholic beverages.",
@@ -26,7 +26,7 @@ export const PROJECTS_DATA: Project[] = [
     featured: false,
   },
   {
-    name: "Turtle",
+    name: "Task Manager & Workspace",
     description: "A comprehensive task and workspace management system featuring members, roles, comments, and attachments.",
     stack: "Next.js • TailwindCSS • TypeScript • Express • MongoDB",
     images: ["/icons/card-view.svg", "/icons/list-view.svg"],
