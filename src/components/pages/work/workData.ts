@@ -33,7 +33,7 @@ export const WORK_EXPERIENCE_DATA: WorkExperienceItem[] = [
     description: "Digital health company that connects patients directly with licensed healthcare providers online",
     image: "/icons/medvive-logo.png",
     alt: "medvive-img",
-    year: "Sep 2025 - Jan 2026",
+    year: "Aug 2025 - Jan 2026",
     role: "Frontend Developer",
     link: "https://medvive.ng",
     stack: "React • Firebase • Tailwind • Mixpanel",
