@@ -19,7 +19,7 @@ export default function Hero() {
 
   return (
     <div
-      className="flex h-full flex-col gap-8 w-full items-start justify-between py-[60px] md:py-[60px] relative select-none"
+      className="flex h-full flex-col gap-16 md:gap-8 w-full items-start justify-between py-[80px] md:py-[60px] relative select-none"
       ref={homeRef}
     >
       <div className="flex flex-col gap-2">
