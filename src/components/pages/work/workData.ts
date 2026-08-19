@@ -49,7 +49,7 @@ export const WORK_EXPERIENCE_DATA: WorkExperienceItem[] = [
     description: "A product development agency evolving from UI/UX design and education into full-scale product development.",
     image: "/icons/cvspan-large.svg",
     alt: "cvspan-img",
-    year: "Jun 2024 - Feb 2025",
+    year: "Jun 2024 - Jun 2025",
     role: "Frontend Developer",
     link: "https://cvspan.com",
     stack: "Next.js • TailwindCSS • TypeScript",
