@@ -3,11 +3,11 @@ import { WORK_EXPERIENCE_DATA } from "./workData";
 
 export default function WorkLayout() {
   return (
-    <div className="flex flex-col w-full mt-2 gap-4">
+    <div className="flex flex-col w-full max-w-lg mt-4 gap-8 md:gap-10">
       {WORK_EXPERIENCE_DATA.map((work, index) => (
         <div
           key={index}
-          className="group flex flex-col w-full gap-2 p-3 -mx-3 md:p-4 md:-mx-4 rounded-none hover:bg-white/[0.04] active:bg-white/[0.06] transition-all duration-300 items-start text-left cursor-default"
+          className="group flex flex-col w-full gap-2 transition-all duration-300 items-start text-left cursor-default"
         >
           {/* Dates on the left */}
           <div className="text-[10px] md:text-[11px] text-white/50 font-mono tracking-wider pt-0.5 flex-shrink-0 uppercase whitespace-nowrap select-none">
@@ -15,7 +15,7 @@ export default function WorkLayout() {
           </div>
 
           {/* Details on the right */}
-          <div className="flex flex-col w-full gap-1">
+          <div className="flex flex-col w-full gap-2">
             <div className="flex flex-col gap-0.5">
               <div className="flex flex-wrap gap-x-2 gap-y-0.5 items-baseline">
                 <a
@@ -34,7 +34,7 @@ export default function WorkLayout() {
             </div>
 
             {/* Description */}
-            <p className="text-[13px] md:text-[13.5px] text-white/60 leading-relaxed max-w-md font-light">
+            <p className="text-[13px] md:text-[13.5px] text-white/60 leading-relaxed max-w-lg font-light">
               {work.description}
             </p>
 

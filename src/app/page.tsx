@@ -2,22 +2,18 @@
 
 import Navbar from "@/components/pages/navbar";
 import Main from "@/components/layouts/home";
-
 import Image from "next/image";
 import About from "@/components/pages/about";
 import Skills from "@/components/pages/skills";
 import Works from "@/components/pages/work";
 import Projects from "@/components/pages/projects";
+import Blog from "@/components/pages/blog";
 import Contact from "@/components/pages/contact";
 import Footer from "@/components/pages/footer";
-import { AppThemeProvider } from "@/providers/theme-provider";
-import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
-import Preloader from "@/components/reusables/Preloader";
-import Blog from "@/components/pages/blog";
+import { PortfolioGridFrame } from "@/components/reusables/PortfolioGridFrame";
 
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -26,8 +22,6 @@ export default function Home() {
           name="description"
           content="I’m a software engineer with a knack for problem-solving and a strong CS background. I build clean, scalable web applications and elegant solutions."
         />
-
-        {/* Open Graph metadata for link previews */}
         <meta property="og:title" content="Samson Lawal — Software Engineer" />
         <meta
           property="og:description"
@@ -41,18 +35,17 @@ export default function Home() {
         <meta property="og:type" content="website" />
       </Head>
 
-      <div className="flex flex-col lg:flex-row lg:justify-between max-w-7xl mx-auto min-h-screen w-full px-4 lg:px-8 font-dm-sans bg-[#fff] dark:bg-[#111] text-black transition-all duration-300">
-        <div className="lg:w-[45%] lg:sticky lg:top-0 h-fit lg:h-screen lg:py-0 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <PortfolioGridFrame>
+        <div className="flex flex-col max-w-lg mx-auto min-h-screen w-full px-4 sm:px-6 font-dm-sans bg-[#fff] dark:bg-[#111] text-black transition-all duration-300 gap-16 md:gap-24 py-8 md:py-12 items-start text-left">
           <Main />
-        </div>
-        <div className="lg:w-[48%] max-w-[570px] flex flex-col gap-24 py-[60px] lg:py-[60px]">
           <Skills />
           <Works />
           <Projects />
+          {/* <Blog /> */}
           <Contact />
           <Footer />
         </div>
-      </div>
+      </PortfolioGridFrame>
     </>
   );
 }

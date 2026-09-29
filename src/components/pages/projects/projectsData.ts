@@ -9,6 +9,15 @@ export interface Project {
 }
 
 export const PROJECTS_DATA: Project[] = [
+  {
+    name: "System Design Whiteboard",
+    description: "Collaborative, real-time infinite canvas for engineering teams to diagram architecture, brainstorm system designs, and collaborate with multiplayer live cursor presence.",
+    stack: "React • TypeScript • WebSockets • WebGL / Canvas • Node.js • CRDTs",
+    images: ["/icons/card-view.svg", "/icons/list-view.svg"],
+    link: "#",
+    github: "https://github.com/samsonlawal",
+    featured: true,
+  },
   // {
   //   name: "Webbie",
   //   description: "Website design discovery platform showcasing trendsetting digital products.",
@@ -43,4 +52,26 @@ export const PROJECTS_DATA: Project[] = [
     github: "https://github.com/samsonlawal/Note-Taking-App",
     featured: false,
   },
+
+  /* =========================================================================
+   * UPCOMING / PIPELINE PROJECTS (In Ideation / Development)
+   * ========================================================================= */
+  // {
+  //   name: "RepoChat AI",
+  //   description: "AI-powered developer tool that indexes your GitHub repositories, enabling interactive conversational Q&A, architectural explanations, and code exploration directly across your codebase.",
+  //   stack: "Next.js • TypeScript • Python • LangChain • Vector DB • OpenAI / Gemini API",
+  //   images: ["/icons/card-view.svg", "/icons/list-view.svg"],
+  //   link: "#",
+  //   github: "https://github.com/samsonlawal",
+  //   featured: true,
+  // },
+  // {
+  //   name: "URL Shortener & Analytics",
+  //   description: "High-throughput URL shortening service featuring custom vanity slugs, distributed caching, rate limiting, and real-time geolocation click analytics.",
+  //   stack: "Go / Rust • Next.js • Redis • PostgreSQL • TailwindCSS",
+  //   images: ["/icons/card-view.svg", "/icons/list-view.svg"],
+  //   link: "#",
+  //   github: "https://github.com/samsonlawal",
+  //   featured: false,
+  // },
 ];

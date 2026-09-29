@@ -3,14 +3,14 @@ import { PROJECTS_DATA } from "./projectsData";
 
 export default function ProjectsLayout() {
   return (
-    <div className="flex flex-col w-full mt-2 gap-4">
+    <div className="flex flex-col w-full max-w-lg mt-4 gap-8 md:gap-10">
       {PROJECTS_DATA.map((project, index) => {
         return (
           <div
             key={index}
-            className="group flex flex-col w-full gap-2 p-3 -mx-3 md:p-4 md:-mx-4 rounded-none hover:bg-white/[0.04] active:bg-white/[0.06] transition-all duration-300 items-start text-left cursor-default"
+            className="group flex flex-col w-full gap-2 transition-all duration-300 items-start text-left cursor-default"
           >
-            <div className="flex flex-col w-full gap-1">
+            <div className="flex flex-col w-full gap-2">
               <div className="flex flex-col gap-0.5">
                 <a
                   href={project.link}
@@ -27,7 +27,7 @@ export default function ProjectsLayout() {
               </div>
 
               {/* Description */}
-              <p className="text-[13px] md:text-[13.5px] text-[#8e8e93] leading-relaxed max-w-md group-hover:text-white/80 transition-colors font-light">
+              <p className="text-[13px] md:text-[13.5px] text-[#8e8e93] leading-relaxed max-w-lg group-hover:text-white/80 transition-colors font-light">
                 {project.description}
               </p>
 
