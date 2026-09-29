@@ -5,6 +5,7 @@ import Main from "@/components/layouts/home";
 
 import Image from "next/image";
 import About from "@/components/pages/about";
+import Skills from "@/components/pages/skills";
 import Works from "@/components/pages/work";
 import Projects from "@/components/pages/projects";
 import Contact from "@/components/pages/contact";
@@ -40,12 +41,12 @@ export default function Home() {
         <meta property="og:type" content="website" />
       </Head>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto min-h-screen w-full px-3 lg:px-6 font-dm-sans bg-[#fff] dark:bg-[#111] text-black transition-all duration-300">
+      <div className="flex flex-col lg:flex-row lg:justify-between max-w-7xl mx-auto min-h-screen w-full px-4 lg:px-8 font-dm-sans bg-[#fff] dark:bg-[#111] text-black transition-all duration-300">
         <div className="lg:w-[45%] lg:sticky lg:top-0 h-fit lg:h-screen lg:py-0 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <Main />
         </div>
-        <div className="lg:flex-1 flex flex-col gap-24 py-[60px] lg:py-[60px] lg:pl-18">
-          {/* <About /> */}
+        <div className="lg:w-[48%] max-w-[570px] flex flex-col gap-24 py-[60px] lg:py-[60px]">
+          <Skills />
           <Works />
           <Projects />
           <Contact />

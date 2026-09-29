@@ -11,10 +11,8 @@ export default function About() {
         className="flex flex-col gap-4 w-full items-start font-dm-sans text-left justify-start"
       >
         {/* Header */}
-        <h3 className="text-[24px] lg:text-[32px] tracking-tight leading-8 italic text-white hover:text-[#F1A7B4] duration-300 transition-colors select-none group">
-          <span className="text-[#F1A7B4] pr-[4px]">{"{"}</span>
+        <h3 className="text-[24px] lg:text-[32px] tracking-tight leading-8 text-white hover:text-[#F1A7B4] duration-300 transition-colors select-none group">
           About Me
-          <span className="text-[#F1A7B4] pl-[4px]">{"}"}</span>
         </h3>
 
         {/* Content Paragraphs */}

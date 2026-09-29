@@ -3,7 +3,6 @@
 import React, { useState, useRef } from "react";
 import { SOCIAL_LINKS } from "@/lib/constants";
 import { useTheme } from "next-themes";
-import { LANGUAGES_DATA, TOOLS_DATA } from "../about/aboutData";
 
 export default function Hero() {
   const { resolvedTheme } = useTheme();
@@ -22,7 +21,8 @@ export default function Hero() {
       className="flex h-full flex-col gap-16 md:gap-8 w-full items-start justify-between py-[80px] md:py-[60px] relative select-none"
       ref={homeRef}
     >
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
+        {/* Shiny badge box
         <div
           onClick={(e) =>
             e.currentTarget.classList.toggle("hero-badge-active")
@@ -38,10 +38,11 @@ export default function Hero() {
             Frontend Developer
           </p>
         </div>
+        */}
 
         <div className="flex flex-col gap-3 justify-center items-start">
           <h1
-            className="text-[38px] md:text-[54px] text-white font-medium leading-none tracking-tight cursor-default group"
+            className="text-[26px] md:text-[36px] text-white font-medium leading-none tracking-tight cursor-default group"
             onClick={(e) => {
               const el = e.currentTarget;
               el.classList.toggle("hero-name-active");
@@ -51,59 +52,16 @@ export default function Hero() {
               Samson Deji Lawal
             </span>
           </h1>
-        </div>
-      </div>
 
-      <div>
-        <div className="flex flex-col gap-3 items-start text-left w-full mb-8 lg:pr-24">
-          <span className="font-mono text-[11px] tracking-widest uppercase text-[#fff]/60 font-bold">
-            Languages & Frameworks
-          </span>
-          <div className="flex flex-wrap gap-2 justify-start">
-            {LANGUAGES_DATA.map((lang, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-1.5 bg-[#1a1a1a] hover:bg-white/5 border border-white/5 px-2.5 py-1 rounded-md transition-colors duration-200"
-              >
-                <img
-                  src={lang.icon}
-                  alt={lang.name}
-                  className="w-3.5 h-3.5"
-                />
-                <span className="text-[12px] font-medium text-[#9d9d9d]">
-                  {lang.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="flex flex-col gap-3 items-start text-left w-full">
-          <span className="font-mono text-[11px] tracking-widest uppercase text-[#fff]/60 font-bold">
-            Tools
-          </span>
-          <div className="flex flex-wrap gap-2 justify-start">
-            {TOOLS_DATA.map((tool, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-1.5 bg-[#1a1a1a] hover:bg-white/5 border border-white/5 px-2.5 py-1 rounded-md transition-colors duration-200"
-              >
-                <img
-                  src={tool.icon}
-                  alt={tool.name}
-                  className="w-3.5 h-3.5"
-                />
-                <span className="text-[12px] font-medium text-[#9d9d9d]">
-                  {tool.name}
-                </span>
-              </div>
-            ))}
-          </div>
+          <p className="text-white/60 text-[13px] md:text-[14px] leading-relaxed font-light max-w-sm mt-1">
+            Frontend engineer focused on building clean, fast, and accessible digital products with React, TypeScript, and modern web architectures.
+          </p>
         </div>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-6 lg:justify-between pt-10">
         <div className="flex flex-col order-1 md:order-none">
-          <span className="font-mono text-[9px] tracking-widest uppercase text-[#fff]/60 font-bold">Inquiries</span>
+          <span className="font-mono text-[9px] tracking-widest uppercase text-[#48cAE4] font-bold">Inquiries</span>
           <button
             onClick={copyToClipboard}
             className="text-white/60 hover:text-[#FFC914] active:text-[#FFC914] transition-colors duration-300 text-xs md:text-sm text-left cursor-pointer mt-1"
@@ -113,7 +71,7 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col gap-1.5 order-2 md:order-none">
-          <span className="font-mono text-[9px] tracking-widest uppercase text-[#fff]/60 font-bold">Socials</span>
+          <span className="font-mono text-[9px] tracking-widest uppercase text-[#FFC914] font-bold">Socials</span>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs md:text-[13px] text-white/60">
             {SOCIAL_LINKS.map((link, index) => {
               const getHoverColor = (name: string) => {

@@ -20,7 +20,7 @@ export default function Blog() {
           </div>
 
           {/* Description */}
-          <div className="md:col-span-5 text-[14px] text-white/70 leading-relaxed max-w-md pt-1 font-serif italic">
+          <div className="md:col-span-5 text-[14px] text-white/70 leading-relaxed max-w-md pt-1">
             "{project.description}"
           </div>
 
