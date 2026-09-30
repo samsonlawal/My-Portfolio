@@ -14,7 +14,7 @@ export default function FooterLayout() {
   }
 
   return (
-    <div className="w-full flex flex-col gap-8 text-left font-dm-sans">
+    <div className="w-full flex flex-col gap-10 text-left font-dm-sans">
       {/* Inquiries & Socials */}
       <div className="w-full flex flex-col gap-5">
         <div className="flex flex-col sm:flex-row gap-6 sm:justify-between pt-2 w-full">

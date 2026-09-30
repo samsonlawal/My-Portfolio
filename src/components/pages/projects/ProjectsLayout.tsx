@@ -3,15 +3,15 @@ import { PROJECTS_DATA } from "./projectsData";
 
 export default function ProjectsLayout() {
   return (
-    <div className="flex flex-col w-full max-w-lg mt-4 gap-8 md:gap-10">
+    <div className="flex flex-col w-full max-w-lg gap-12 md:gap-14">
       {PROJECTS_DATA.map((project, index) => {
         return (
           <div
             key={index}
-            className="group flex flex-col w-full gap-2 transition-all duration-300 items-start text-left cursor-default"
+            className="group flex flex-col w-full gap-2.5 transition-all duration-300 items-start text-left cursor-default"
           >
-            <div className="flex flex-col w-full gap-2">
-              <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col w-full gap-1.5">
+              <div className="flex flex-col">
                 <a
                   href={project.link}
                   target="_blank"
@@ -32,7 +32,7 @@ export default function ProjectsLayout() {
               </p>
 
               {/* Tech Stack Tags */}
-              <div className="flex flex-wrap gap-1.5 justify-start mt-1">
+              <div className="flex flex-wrap gap-1.5 justify-start mt-0.5">
                 {project.stack.split(" • ").map((tech, idx) => (
                   <span
                     key={idx}

@@ -36,7 +36,7 @@ export default function Home() {
       </Head>
 
       <PortfolioGridFrame>
-        <div className="flex flex-col max-w-lg mx-auto min-h-screen w-full px-4 sm:px-6 font-dm-sans bg-[#fff] dark:bg-[#111] text-black transition-all duration-300 gap-16 md:gap-24 py-8 md:py-12 items-start text-left">
+        <div className="flex flex-col max-w-lg mx-auto min-h-screen w-full px-4 sm:px-6 font-dm-sans bg-[#fff] dark:bg-[#111] text-black transition-all duration-300 gap-20 md:gap-28 py-12 md:py-20 items-start text-left">
           <Main />
           <Skills />
           <Works />

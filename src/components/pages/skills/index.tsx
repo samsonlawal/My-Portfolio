@@ -5,9 +5,9 @@ import { LANGUAGES_DATA, TOOLS_DATA } from "../about/aboutData";
 
 export default function Skills() {
   return (
-    <div className="w-full flex flex-col gap-6" id="skills">
+    <div className="w-full flex flex-col gap-8 md:gap-10" id="skills">
       {/* Languages & Frameworks */}
-      <div className="flex flex-col gap-3 items-start text-left w-full">
+      <div className="flex flex-col gap-3.5 items-start text-left w-full">
         <span className="font-mono text-[10px] md:text-[11px] tracking-widest uppercase text-[#F1A7B4] font-bold">
           Languages & Frameworks
         </span>

@@ -5,15 +5,15 @@ import ProjectsLayout from "./ProjectsLayout"; // Interactive List
 export default function Projects() {
   return (
     <div className="w-full" id="projects">
-      <div className="flex flex-col gap-3 md:gap-4 w-full items-start font-dm-sans text-black justify-start">
+      <div className="flex flex-col gap-6 w-full items-start font-dm-sans text-black justify-start">
         
         {/* Header */}
-        <h3 className="text-[18px] lg:text-[22px] font-semibold tracking-tight text-[#fff] hover:text-[#48CAE4] transition-all duration-300">
+        <h2 className="font-mono text-[10px] md:text-[11px] tracking-widest uppercase text-[#48CAE4] font-bold select-none">
           Projects
-        </h3>
+        </h2>
 
         {/* Render Layout */}
-        <div className="w-full mt-0">
+        <div className="w-full">
           <ProjectsLayout />
         </div>
       </div>
